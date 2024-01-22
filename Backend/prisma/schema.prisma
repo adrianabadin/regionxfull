@@ -1,0 +1,137 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+enum ROLES {
+  director
+  sies
+  comunitaria
+  epidemiologia
+  deposito
+  rrhh
+  acceso
+  prodiaba
+  proepi
+  equidad
+  inmuno
+  sexual
+  mental
+}
+
+model Demography {
+  id             String           @id @default(uuid())
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  state          String           @unique
+  cities         Cities[]
+  population     Int
+  description    String           @db.LongText
+  politics       String           @db.LongText
+  golds          Golds[]
+  Agreements     Agreements[]
+  throbleshuting Throbleshuting[]
+}
+
+model Golds {
+  id             String       @id @default(uuid())
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  title          String       @unique
+  description    String       @db.LongText
+  expirationDate DateTime
+  Demography     Demography?  @relation(fields: [demographyId], references: [id])
+  demographyId   String?
+  departments    Departments? @relation(fields: [departmentsId], references: [id])
+  departmentsId  String?
+
+  @@index([demographyId])
+  @@index([departmentsId])
+}
+
+model Departments {
+  id             String           @id @default(uuid())
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  name           String           @unique
+  description    String           @db.LongText
+  responsable    Users            @relation(fields: [usersId], references: [id])
+  usersId        String
+  golds          Golds[]
+  Agreements     Agreements[]
+  throbleshuting Throbleshuting[]
+
+  @@index([usersId])
+}
+
+model Agreements {
+  id            String      @id @default(uuid())
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  name          String      @unique
+  description   String      @db.LongText
+  department    Departments @relation(fields: [departmentsId], references: [id])
+  departmentsId String
+  state         Demography  @relation(fields: [demographyId], references: [id])
+  demographyId  String
+
+  @@index([departmentsId])
+  @@index([demographyId])
+}
+
+model Throbleshuting {
+  id          String     @id @default(uuid())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  name        String     @unique
+  description String     @db.LongText
+  state       Demography @relation(fields: [demographyId], references: [id])
+
+  demographyId  String
+  department    Departments @relation(fields: [departmentsId], references: [id])
+  departmentsId String
+
+  @@index([demographyId])
+  @@index([departmentsId])
+}
+
+model Cities {
+  id        String     @id @default(uuid())
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  name      String     @unique
+  stateId   String
+  state     Demography @relation(fields: [stateId], references: [id])
+
+  @@index([stateId])
+}
+
+model Users {
+  id          String        @id @default(uuid())
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  name        String
+  lastname    String
+  hash        String
+  isAdmin     Boolean?
+  username    String        @unique
+  phone       String?
+  departments Departments[]
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  sid       String   @unique
+  data      String   @db.LongText
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
