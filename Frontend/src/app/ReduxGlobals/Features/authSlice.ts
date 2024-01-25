@@ -8,8 +8,9 @@ const initialState:AuthResponseType={
     lastname:"",
     name: "",
     username:"",
-    id:""
-
+    id:"",
+    isAdmin:false,
+    departments:[]
 }
 
 export const authSlice=createSlice({
@@ -24,6 +25,8 @@ export const authSlice=createSlice({
             state.username=action.payload.username
             state.name=action.payload.name
             state.id=action.payload.id
+            state.isAdmin=action.payload.isAdmin
+            state.departments=action.payload.departments
         })
     }
         

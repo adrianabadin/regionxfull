@@ -8,6 +8,7 @@ import {
   IconButton,
   Card,
   Collapse,
+  MenuItem,
 } from "@material-tailwind/react";
 import LoginModal from "./Login";
 import SignUpModal from "./Signup";
@@ -20,6 +21,7 @@ import {
 import { useDispatch } from "react-redux";
 import { clearAuth } from "../ReduxGlobals/Features/authSlice";
 import Link from "next/link";
+import Menuitem from "./menuitem";
 
 export function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -40,7 +42,7 @@ export function StickyNavbar() {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
-
+  const data = useAppSelector((state) => state.auth);
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
@@ -50,7 +52,7 @@ export function StickyNavbar() {
         className="p-1 font-normal"
       >
         <Link href="/direccion" className="flex items-center">
-          Equipo Directivo
+          Direccion
         </Link>
       </Typography>
       <Typography
@@ -59,9 +61,9 @@ export function StickyNavbar() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Account
-        </a>
+        <Link href="/territory" className="flex items-center">
+          Territorios
+        </Link>
       </Typography>
       <Typography
         as="li"
@@ -69,25 +71,20 @@ export function StickyNavbar() {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Blocks
-        </a>
+        <Link href="/departments" className="flex items-center">
+          Areas
+        </Link>
       </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="white"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
-          Docs
-        </a>
-      </Typography>
+      {data !== undefined ? (
+        data.isAdmin === true ? (
+          <Menuitem name="Configuracion" id="config" />
+        ) : null
+      ) : null}
     </ul>
   );
 
   return (
-    <header className="bg-blue-500 max-h-[768px] fixed top-0  h-32 w-full overflow-hidden  ">
+    <header className="bg-blue-500 max-h-[768px]  top-0  h-32 w-full overflow-hidden  ">
       <Navbar className="z-10  max-w-full h-full rounded-none px-4  lg:px-8 lg:py-4 bg-blue-500 my-auto">
         <div className="flex items-center justify-between text-blue-gray-900 h-full">
           <Typography

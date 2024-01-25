@@ -11,6 +11,9 @@ import passport from "passport"
 import  authRoutes  from './auth/auth.routes';
 import "./auth/local.strategy"
 import userRouter from './users/user.routes';
+import departmentRouter from './departments/department.routes';
+import demographyRouter from './demography/demography.routes';
+import taskRouter from './tasks/task.routes';
 const authController=new AuthController()
 const app= express()
 const envSchema=z.object({
@@ -68,4 +71,7 @@ passport.serializeUser(authController.serialize)
 passport.deserializeUser(authController.deSerialize)
 app.use("/auth",authRoutes)
 app.use("/users",userRouter)
+app.use("/departments",departmentRouter)
+app.use("/demography",demographyRouter)
+app.use("/tasks",taskRouter)
 //routeHandler(app)

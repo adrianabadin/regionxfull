@@ -32,7 +32,7 @@ export class AuthVerifyModule {
     }
     async loginVerify(username:string,password:string,done:(...args:any)=>any){
         try{
-            const user = await this.prisma.users.findUnique({where:{username}})
+            const user = await this.prisma.users.findUnique({where:{username},include:{departments:{select:{name:true,id:true}}}})
             console.log(user)
             if (user !==null) // si el usuario existe
             {

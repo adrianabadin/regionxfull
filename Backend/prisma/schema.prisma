@@ -39,6 +39,7 @@ model Demography {
   golds          Golds[]
   Agreements     Agreements[]
   throbleshuting Throbleshuting[]
+  tasks          Tasks[]
 }
 
 model Golds {
@@ -63,11 +64,12 @@ model Departments {
   updatedAt      DateTime         @updatedAt
   name           String           @unique
   description    String           @db.LongText
-  responsable    Users            @relation(fields: [usersId], references: [id])
-  usersId        String
+  responsable    Users?           @relation(fields: [usersId], references: [id])
+  usersId        String?
   golds          Golds[]
   Agreements     Agreements[]
   throbleshuting Throbleshuting[]
+  tasks          Tasks[]
 
   @@index([usersId])
 }
@@ -85,6 +87,33 @@ model Agreements {
 
   @@index([departmentsId])
   @@index([demographyId])
+}
+
+enum Flags {
+  red
+  yellow
+  green
+}
+
+model Tasks {
+  id            String      @id @default(uuid())
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  title         String
+  state         Demography  @relation(fields: [demographyId], references: [id])
+  demographyId  String
+  department    Departments @relation(fields: [departmentsId], references: [id])
+  departmentsId String
+  date          DateTime
+  user          Users       @relation(fields: [userId], references: [id])
+  userId        String
+  brief         String?     @db.LongText
+  file          String?     @db.LongText
+  flag          Flags
+
+  @@index([demographyId])
+  @@index([departmentsId])
+  @@index([userId])
 }
 
 model Throbleshuting {
@@ -121,10 +150,11 @@ model Users {
   name        String
   lastname    String
   hash        String
-  isAdmin     Boolean?
+  isAdmin     Boolean       @default(false)
   username    String        @unique
   phone       String?
   departments Departments[]
+  Tasks       Tasks[]
 }
 
 model Session {

@@ -44,7 +44,8 @@ export function LoginModal({
   const onSubmit = (data: LoginType) => {
     login(data)
       .unwrap()
-      .then(() => {
+      .then((response) => {
+        console.log(response);
         reset();
         setOpen(false);
       })

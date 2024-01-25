@@ -1,10 +1,12 @@
-import { Router } from "express";
+import { Response, Router,Request, NextFunction } from "express";
 import { validateSchemaMiddleware } from "../auth/auth.schema";
 import { departmentSchema, departmentsSchema, setAdminSchema } from "./users.schema";
 import { UsersController } from './users.controller';
 const usersController=new UsersController()
 const userRouter=Router()
-userRouter.get("/setadmin/:id",validateSchemaMiddleware(setAdminSchema),usersController.setAdmin)
-userRouter.get("/addDepartment/:id",validateSchemaMiddleware(departmentSchema),usersController.addDepartment)
-userRouter.get("/addDepartments/:id",validateSchemaMiddleware(departmentsSchema),usersController.addDepartments)
+userRouter.put("/setadmin/:id",validateSchemaMiddleware(setAdminSchema),usersController.setAdmin)
+userRouter.put("/dropadmin/:id",validateSchemaMiddleware(setAdminSchema),usersController.dropAdmin)
+userRouter.put("/adddepartment/:id",validateSchemaMiddleware(departmentSchema),usersController.addDepartment)
+userRouter.put("/adddepartments/:id",(req:Request,res:Response,next:NextFunction)=>{console.log(req.body);next()},validateSchemaMiddleware(departmentsSchema),usersController.addDepartments)
+userRouter.get("/getusers",usersController.getUsers)
 export default userRouter

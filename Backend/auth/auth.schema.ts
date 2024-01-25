@@ -4,6 +4,7 @@ import {AnyZodObject, z} from "zod"
 export function validateSchemaMiddleware(schema:AnyZodObject) {
     return (req:Request,res:Response,next:NextFunction)=>{
         const response = schema.safeParse(req)
+        console.log(req.body)
         if (response.success) {
             console.log("Success")
             next()}        

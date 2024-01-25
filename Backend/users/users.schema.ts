@@ -6,7 +6,7 @@ export const departmentSchema=z.object({
    query:z.object({ name:z.string().min(3,"El nombre debe tener al menos 3 caracteres")})
 })
 export const departmentsSchema=z.object({
-    query:z.object({ name:z.array( z.string().min(3,"El nombre debe tener al menos 3 caracteres"))})
+    body:z.object({ name:z.array( z.string().min(3,"El nombre debe tener al menos 3 caracteres"))})
 })
 
 export const setAdminSchema=z.object({
