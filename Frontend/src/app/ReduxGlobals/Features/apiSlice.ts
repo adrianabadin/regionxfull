@@ -3,6 +3,7 @@ import {z} from "zod"
 import { AuthResponseType } from "./authSlice"
 import { DepartmentAddType } from "@/app/departments/config/components/AddDepartment"
 import { DemografyCreateType } from "@/app/departments/config/components/AddState"
+import { TaskType } from "@/app/components/Agenda"
 
 
 const dotenvSchema = z.object({
@@ -33,8 +34,48 @@ export const SignUpSchema = z.object({
         if (value.password===value.password2) return true
         else return false
     },{message:"Ambas contraseñas deben coincidir",path:["password2"]})
- 
- 
+ /**
+  *   {
+    "id": "c29e09c4-5dd8-4419-87d7-6390be9de4d7",
+    "createdAt": "2024-01-25T04:20:44.994Z",
+    "updatedAt": "2024-01-25T04:20:44.994Z",
+    "title": "Visita",
+    "demographyId": "751e8ff5-5876-4ed8-8756-3f5ab7df35c7",
+    "departmentsId": "33b56245-acf5-42a8-898f-87b1d915d0dd",
+    "date": "2024-01-25T04:12:11.153Z",
+    "userId": "4ae84582-127b-4ef4-a40b-da1829e646ce",
+    "brief": null,
+    "file": null,
+    "flag": "red",
+    "department": {
+      "name": "Protesis"
+    },
+    "state": {
+      "state": "Saladillo"
+    },
+    "user": {
+      "username": "aabadin@gmail.com"
+    }
+  }
+  */
+export const TasksResponseSchema =z.object({
+    id:z.string().uuid({message:"debe ser un UUID valido"}),
+    createdAt:z.string().min(3,{message:"debe contener al menos 3 caracteres"}),
+    title:z.string().min(1,{message:"debe tener al menos 3 caracteres"}),
+    date:z.string().transform((stringValue)=>new Date(stringValue)),
+    department:z.object({
+        name:z.string().min(3,{message:"debe tener al menos 3 caracteres"}),
+
+    }),
+    state:z.object({
+        state:z.string().min(3,{message:"debe tener al menos 3 caracteres"}),
+    }),
+    user:z.object({
+        username:z.string().min(3,{message:"debe tener al menos 3 caracteres"}),
+    })
+
+})
+export type TasksResponseType = z.infer<typeof TasksResponseSchema>
  export const LoginSchema = z.object({
           username:z.string().email({message:"debes proveer un email valido"}),
          password:z.string().min(6,{message:"La contraseña debe contener al menos 6 caracteres"})
@@ -70,7 +111,7 @@ export type LoginType = z.infer<typeof LoginSchema>
 export const apiSlice=createApi({
     reducerPath: "api",
     baseQuery:fetchBaseQuery({baseUrl:process.env.NEXT_PUBLIC_BACKURL,credentials:"include",mode:"cors",headers:{"Access-Control-Allow-Origin":process.env.NEXT_PUBLIC_BACKURL}}),
-        tagTypes:["users","departments","states"],
+        tagTypes:["users","departments","states","tasks"],
     endpoints:(builder)=>({
         login:builder.mutation<AuthResponseType,LoginType>({
             query:(authData)=>
@@ -145,6 +186,21 @@ export const apiSlice=createApi({
                 body:{...data.data}
                 
             }),invalidatesTags:[{type:"users"}]
+        }),
+        getTasksByService:builder.query<TasksResponseType,TaskType["department"]>({
+            query:(query)=>({
+                url:"/tasks/getTasksByDepartment"+"?department="+query,
+                method:"get"
+
+            }),providesTags:[{type:"tasks"}]
+        }),
+        createTask:builder.mutation<TasksResponseType,TaskType>({
+            query:(body)=>({
+                url:"/tasks/create",
+                method:"post",
+                body:body
+            }),invalidatesTags:[{type:"tasks"}]
+
         })
         
     })

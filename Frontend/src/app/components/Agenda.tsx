@@ -34,9 +34,9 @@ export const TaskSchema = z.object({
   flags: z.enum(["red", "yellow", "green"], {
     invalid_type_error: "debe ser red, yellow or green",
   }),
-  departmentsId: z.string().uuid(),
-  userId: z.string().uuid(),
-  state: z.string().uuid(),
+  department: z.string().min(3,{message:"debe tener al menos 3 caracteres"}),
+  username: z.string().email({message:"debe ser un email valido"}),
+  state: z.string().min(3,{message:"debe tener al menos 3 caracteres"}),
 });
 export type TaskType = z.infer<typeof TaskSchema>;
 export default function TaskManager({

@@ -5,6 +5,8 @@ export class TaskService{
     constructor(protected prisma=prismaClient){
         this.createTask=this.createTask.bind(this);
         this.getTasksByDepartment=this.getTasksByDepartment.bind(this);
+        this.getTasksByState=this.getTasksByState.bind(this)
+        this.getTasksByUserName=this.getTasksByUserName.bind(this)
     }
 async createTask(data:TaskType){
     try{
@@ -34,10 +36,24 @@ async getTasksByDepartment(department?:string){
 
 if (department===undefined) {
     console.log("x caaca")
-    return await this.prisma.tasks.findMany({where:{},include:{department:{select:{name:true}},state:{select:{state:true}}}})}
+    return await this.prisma.tasks.findMany({
+        where:{},
+        include:{
+            department:{select:{name:true}},
+            state:{select:{state:true}},
+            user:{select:{username:true}},
+        }
+    })}
 else{return await this.prisma.tasks.findMany({
-    where:{department:{name:department}}   
-     ,include:{department:{select:{name:true}},state:{select:{state:true}}}})
+    where:{
+        department:{name:department}
+    },
+    include:{
+        department:{select:{name:true}},
+        state:{select:{state:true}},
+        user:{select:{username:true}}
+    
+    }})
     
     }
 
@@ -45,4 +61,47 @@ else{return await this.prisma.tasks.findMany({
         logger.error({function: "TaskService.getTasks",error})
     }
 }
+async getTasksByState(state?:string){
+    try{
+        if (state === undefined) return await this.prisma.tasks.findMany({
+            where:{},
+            include:{
+                department:{select:{name:true}},
+                state:{select:{state:true}},
+                user:{select:{username:true}},
+            }
+        })
+        else return await this.prisma.tasks.findMany({
+            where:{state:{state}},
+            include:{
+                state:{select:{state:true}},
+                department:{select:{name:true}},
+                user:{select:{username:true}}
+            }})
+    }catch(error){
+        logger.error({function:"TaskService.getTasksByState",error})
+    }
 }
+async getTasksByUserName(username:string){
+    try{
+        if(username === undefined) return await this.prisma.tasks.findMany({
+            where:{},
+            include:{
+                department:{select:{name:true}},
+                state:{select:{state:true}},
+                user:{select:{username:true}},
+            }
+        })
+        else return await this.prisma.tasks.findMany({
+             where:{user:{username}},
+             include:{
+                department:{select:{name:true}},
+                state:{select:{state:true}},
+                user:{select:{username:true}}
+            }})
+    }
+    catch(error){
+        logger.error({function:"TaskService.getTasksByState",error})
+    
+}
+}}
