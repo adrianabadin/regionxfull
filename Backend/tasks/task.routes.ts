@@ -6,5 +6,5 @@ taskRouter.post("/create",taskController.createTask)
 taskRouter.get("/getTasksByDepartment",taskController.getTasksByDepartment)
 taskRouter.get("/getTasksByState",taskController.getTasksByState)
 taskRouter.get("/getTasksByUserName",taskController.getTasksByUsername)
-
+taskRouter.get("/get",taskController.getTasks)
 export default taskRouter

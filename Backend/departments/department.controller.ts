@@ -18,9 +18,10 @@ this.getDepartments=this.getDepartments.bind(this);
             res.status(500).send(error)
         }
     }
-    async getDepartments(_req:Request,res:Response){
+    async getDepartments(req:Request<any,any,any,{state:string,username:string}>,res:Response){
         try{
-            const response = await this.service.getDepartments()
+            const {state,username}=req.query
+            const response = await this.service.getDepartments(username,state)
             res.status(200).send(response)
         }catch(error){
             logger.error({function:"DeparmentController.getDepartments",error})

@@ -7,6 +7,7 @@ export class TaskService{
         this.getTasksByDepartment=this.getTasksByDepartment.bind(this);
         this.getTasksByState=this.getTasksByState.bind(this)
         this.getTasksByUserName=this.getTasksByUserName.bind(this)
+        this.getTasks=this.getTasks.bind(this)
     }
 async createTask(data:TaskType){
     try{
@@ -29,7 +30,29 @@ async createTask(data:TaskType){
         logger.error({function: "TaskService.createTask",error})
     }
 }
+async getTasks(username:string,state:string,department:string){
+    try{
 
+//if (username!==undefined)       
+return await this.prisma.tasks.findMany(
+    { 
+        where:{
+            AND:[{
+                user:{username:username}
+                },
+                {OR:
+                    [
+                        {department:{name:department}},
+                        {state:{state:state}}
+                    ]}
+                ]}
+                ,include:{department:{select:{name:true}},state:{select:{state:true}},user:{select:{username:true}}}
+            })
+//    else return await this.prisma.tasks.findMany({where:{},include:{department:{select:{name:true}},state:{select:{state:true}},user:{select:{username:true}}}})
+    }catch(error){
+        logger.error({function: "TaskService.getTasks",error})
+    }
+}
 async getTasksByDepartment(department?:string){
     try{
 

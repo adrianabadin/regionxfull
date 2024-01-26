@@ -17,9 +17,12 @@ this.getDepartments=this.getDepartments.bind(this);
             logger.error({function:"DeparmentService.createDepartment",error})
         }
     }
-    async getDepartments(){
-        try{
-            const response = await this.prisma.departments.findMany({})
+    async getDepartments(username:string){
+        try{console.log(username)
+            if (username === undefined ) return await this.prisma.departments.findMany({})
+            const response = await this.prisma.departments.findMany({
+        where:{responsable:{username}}})
+            console.log(response)
             return response 
         }
     catch(error){

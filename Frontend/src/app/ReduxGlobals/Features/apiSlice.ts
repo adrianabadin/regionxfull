@@ -63,6 +63,7 @@ export const TasksResponseSchema =z.object({
     createdAt:z.string().min(3,{message:"debe contener al menos 3 caracteres"}),
     title:z.string().min(1,{message:"debe tener al menos 3 caracteres"}),
     date:z.string().transform((stringValue)=>new Date(stringValue)),
+    flag:z.enum(["red", "green", "yellow"],{invalid_type_error:"el valor debe ser (red,yellow,green)"}),
     department:z.object({
         name:z.string().min(3,{message:"debe tener al menos 3 caracteres"}),
 
@@ -118,7 +119,7 @@ export const apiSlice=createApi({
             ({url:`/auth/login`,
             headers:{"Content-Type": "application/json"},
             method: 'POST',      
-            body:authData}),
+            body:authData}),invalidatesTags:[{type:"tasks"}],
      
         }),
         signUp:builder.mutation<AuthResponseType,SignUpType>({
@@ -159,9 +160,9 @@ export const apiSlice=createApi({
                 body:data
             }),invalidatesTags:["users", "departments"]
         }),
-        getDepartments:builder.query<DepartmentResponseType[],undefined>({
-            query:()=>({
-                url:"/departments/getdepartments",
+        getDepartments:builder.query<DepartmentResponseType[],{username?:string}|undefined>({
+            query:(query)=>({
+                url:`/departments/getdepartments${(query !== undefined)? "?username="+query.username:""}`,
                 method:"get",
 
             }),providesTags:[{type:"departments"}]
@@ -187,11 +188,10 @@ export const apiSlice=createApi({
                 
             }),invalidatesTags:[{type:"users"}]
         }),
-        getTasksByService:builder.query<TasksResponseType,TaskType["department"]>({
+        getTasks:builder.query<TasksResponseType[],{username?:string,state?:string,department?:string}>({
             query:(query)=>({
-                url:"/tasks/getTasksByDepartment"+"?department="+query,
+                url:"/tasks/get?"+Object.keys(query).map(item=>`${item}=${query[item as keyof typeof query]}`).join("&") ,
                 method:"get"
-
             }),providesTags:[{type:"tasks"}]
         }),
         createTask:builder.mutation<TasksResponseType,TaskType>({
@@ -205,4 +205,4 @@ export const apiSlice=createApi({
         
     })
     })
-export const {useLinkDepartmentMutation,useGetStatesQuery,useCreateStateMutation,useGetDepartmentsQuery,useGetUsersQuery, useCreateDepartmentMutation,useLoginMutation,useSignUpMutation,useLogoutQuery, useSetAdminMutation,useDropAdminMutation}=apiSlice
+export const {useGetTasksQuery,useLinkDepartmentMutation,useGetStatesQuery,useCreateStateMutation,useGetDepartmentsQuery,useGetUsersQuery, useCreateDepartmentMutation,useLoginMutation,useSignUpMutation,useLogoutQuery, useSetAdminMutation,useDropAdminMutation}=apiSlice

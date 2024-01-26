@@ -11,6 +11,7 @@ export class TaskController{
         this.getTasksByDepartment=this.getTasksByDepartment.bind(this)
         this.getTasksByState=this.getTasksByState.bind(this)
         this.getTasksByUsername=this.getTasksByUsername.bind(this)
+        this.getTasks=this.getTasks.bind(this)
     }
     async createTask (req:Request<any,any,TaskType>,res:Response){
         try{
@@ -51,6 +52,16 @@ export class TaskController{
         }
         catch(error){
             logger.error({function:"TaskController.getTasksByUsername",error})
+            res.status(500).send(error)
+        }
+    }
+    async getTasks(req:Request<any,any,any,{username:string,state:string,department:string}>,res:Response){
+        try{
+            const {department,state,username} = req.query
+            const response= await this.service.getTasks(username,state,department)
+            res.status(200).send(response)
+        }catch(error){
+            logger.error({function:"TaskController.getTasks",error})
             res.status(500).send(error)
         }
     }

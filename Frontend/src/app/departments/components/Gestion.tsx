@@ -7,7 +7,7 @@ import { Typography } from "@material-tailwind/react";
 function Gestion() {
   return (
     <>
-      <TaskManager />
+      <TaskManager filter="Protesis" />
     </>
   );
 }
