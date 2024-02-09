@@ -10,6 +10,7 @@ export class UsersService {
         this.addDepartment=this.addDepartment.bind(this)
         this.addDepartments=this.addDepartments.bind(this)
         this.getUsers=this.getUsers.bind(this)
+        this.deleteUser=this.deleteUser.bind(this)
     }
     async setAdmin(id:string){
         try{
@@ -53,6 +54,14 @@ export class UsersService {
             return response
         }catch(error){
             logger.error({function:"UsersService.getUsers",error})
+        }
+    }
+    async deleteUser(id:string){
+        try{
+           const response = await this.prisma.users.delete({where:{id}})
+            return response
+        }catch(error){
+            logger.error({function:"UsersService.deleteUser",error})
         }
     }
 }

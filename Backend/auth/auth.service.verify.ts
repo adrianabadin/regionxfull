@@ -20,7 +20,7 @@ export class AuthVerifyModule {
             if (user !== null){
                 throw new Error("username already exists")
             }
-            const response = await this.service.SignUpUser(req.body)
+            const response = await this.service.SignUpUser({...req.body,username:req.body.username.toUpperCase()})
             if (response !==undefined) done(null,response)
             else throw new Error ("Error creating user on database")
 
@@ -32,8 +32,8 @@ export class AuthVerifyModule {
     }
     async loginVerify(username:string,password:string,done:(...args:any)=>any){
         try{
-            const user = await this.prisma.users.findUnique({where:{username},include:{departments:{select:{name:true,id:true}}}})
-            console.log(user)
+            const user = await this.prisma.users.findUnique({where:{username:username.toUpperCase()},include:{departments:{select:{name:true,id:true}}}})
+            console.log(user,"loginverify")
             if (user !==null) // si el usuario existe
             {
                 if (user?.hash !==undefined && await argon.verify(user.hash,password))

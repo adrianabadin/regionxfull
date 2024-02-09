@@ -12,6 +12,7 @@ constructor(protected prisma=prismaClient,protected service=usersService){
     this.addDepartment=this.addDepartment.bind(this)
     this.addDepartments=this.addDepartments.bind(this)
     this.getUsers=this.getUsers.bind(this)
+    this.deleteUser=this.deleteUser.bind(this)
 }
 async setAdmin(req:Request<SetAdminType["params"]>,res:Response){
     try{
@@ -62,6 +63,14 @@ async getUsers(_req:Request,res:Response){
     }catch(error){
         logger.error({function:"UsersController.getUsers",error})
         res.status(500).send({error})
+    }
+}
+async deleteUser(req:Request<any,any,any,{id:string}>,res:Response){
+    try{
+        const response = await this.service.deleteUser(req.query.id)
+        res.status(200).send(response)
+    }catch(error){
+        logger.error({function:"UsersController.deleteUser",error})
     }
 }
 }

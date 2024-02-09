@@ -9,4 +9,5 @@ userRouter.put("/dropadmin/:id",validateSchemaMiddleware(setAdminSchema),usersCo
 userRouter.put("/adddepartment/:id",validateSchemaMiddleware(departmentSchema),usersController.addDepartment)
 userRouter.put("/adddepartments/:id",(req:Request,res:Response,next:NextFunction)=>{console.log(req.body);next()},validateSchemaMiddleware(departmentsSchema),usersController.addDepartments)
 userRouter.get("/getusers",usersController.getUsers)
+userRouter.delete("/delete",usersController.deleteUser)
 export default userRouter

@@ -22,7 +22,7 @@ async SignUpUser (data:SignUpType){
         hash,lastname:data.lastname,name:data.name,username:data.username
     }
     const response =await this.prisma.users.create({data:dataWithHash})
-    console.log(response)
+    console.log(response,"saved" )
     return response
     }catch(error){logger.error({function:"AuthService.SignUpUser",error})
 
