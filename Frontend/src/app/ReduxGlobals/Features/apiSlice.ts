@@ -111,7 +111,7 @@ export type LoginType = z.infer<typeof LoginSchema>
  */
 export const apiSlice=createApi({
     reducerPath: "api",
-    baseQuery:fetchBaseQuery({baseUrl:process.env.NEXT_PUBLIC_BACKURL,credentials:"include",mode:"cors",headers:{"Access-Control-Allow-Origin":process.env.NEXT_PUBLIC_BACKURL}}),
+    baseQuery:fetchBaseQuery({baseUrl:process.env.NEXT_PUBLIC_BACKURL,credentials:"include",mode:"cors"}),
         tagTypes:["users","departments","states","tasks"],
     endpoints:(builder)=>({
         login:builder.mutation<AuthResponseType,LoginType>({
@@ -120,12 +120,13 @@ export const apiSlice=createApi({
             headers:{"Content-Type": "application/json"},
             method: 'POST',      
             body:authData}),invalidatesTags:[{type:"tasks"}],
+
      
         }),
         signUp:builder.mutation<AuthResponseType,SignUpType>({
           query:(signUpData)=>({
             url:"/auth/signup",
-            method:"POST",
+            method:"post",
             body:signUpData
           })
         }),
