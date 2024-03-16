@@ -65,6 +65,7 @@ CREATE TABLE "Tasks" (
     "title" STRING NOT NULL,
     "demographyId" STRING NOT NULL,
     "departmentsId" STRING NOT NULL,
+    "isCompleted" BOOL NOT NULL DEFAULT false,
     "date" TIMESTAMP(3) NOT NULL,
     "userId" STRING NOT NULL,
     "brief" STRING,
@@ -114,6 +115,82 @@ CREATE TABLE "Users" (
 );
 
 -- CreateTable
+CREATE TABLE "Strength" (
+    "id" STRING NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "isActive" BOOL NOT NULL DEFAULT true,
+    "title" STRING NOT NULL,
+    "description" STRING NOT NULL,
+    "fODAstatesId" STRING,
+    "fODAservicesId" STRING,
+
+    CONSTRAINT "Strength_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Oportunity" (
+    "id" STRING NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "title" STRING NOT NULL,
+    "description" STRING NOT NULL,
+    "fODAstatesId" STRING,
+    "fODAservicesId" STRING,
+    "isActive" BOOL NOT NULL DEFAULT true,
+
+    CONSTRAINT "Oportunity_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Weakness" (
+    "id" STRING NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "title" STRING NOT NULL,
+    "description" STRING NOT NULL,
+    "fODAstatesId" STRING,
+    "fODAservicesId" STRING,
+    "isActive" BOOL NOT NULL DEFAULT true,
+
+    CONSTRAINT "Weakness_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Menace" (
+    "id" STRING NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "title" STRING NOT NULL,
+    "description" STRING NOT NULL,
+    "fODAstatesId" STRING,
+    "fODAservicesId" STRING,
+    "isActive" BOOL NOT NULL DEFAULT true,
+
+    CONSTRAINT "Menace_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "FODAstates" (
+    "id" STRING NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "demographyId" STRING NOT NULL,
+
+    CONSTRAINT "FODAstates_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "FODAservices" (
+    "id" STRING NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "departmentsId" STRING NOT NULL,
+
+    CONSTRAINT "FODAservices_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "Session" (
     "id" STRING NOT NULL,
     "sid" STRING NOT NULL,
@@ -151,6 +228,12 @@ CREATE UNIQUE INDEX "Cities_name_key" ON "Cities"("name");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Users_username_key" ON "Users"("username");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "FODAstates_demographyId_key" ON "FODAstates"("demographyId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "FODAservices_departmentsId_key" ON "FODAservices"("departmentsId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Session_sid_key" ON "Session"("sid");
@@ -193,6 +276,36 @@ ALTER TABLE "Throbleshuting" ADD CONSTRAINT "Throbleshuting_departmentsId_fkey" 
 
 -- AddForeignKey
 ALTER TABLE "Cities" ADD CONSTRAINT "Cities_stateId_fkey" FOREIGN KEY ("stateId") REFERENCES "Demography"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Strength" ADD CONSTRAINT "Strength_fODAstatesId_fkey" FOREIGN KEY ("fODAstatesId") REFERENCES "FODAstates"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Strength" ADD CONSTRAINT "Strength_fODAservicesId_fkey" FOREIGN KEY ("fODAservicesId") REFERENCES "FODAservices"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Oportunity" ADD CONSTRAINT "Oportunity_fODAstatesId_fkey" FOREIGN KEY ("fODAstatesId") REFERENCES "FODAstates"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Oportunity" ADD CONSTRAINT "Oportunity_fODAservicesId_fkey" FOREIGN KEY ("fODAservicesId") REFERENCES "FODAservices"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Weakness" ADD CONSTRAINT "Weakness_fODAstatesId_fkey" FOREIGN KEY ("fODAstatesId") REFERENCES "FODAstates"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Weakness" ADD CONSTRAINT "Weakness_fODAservicesId_fkey" FOREIGN KEY ("fODAservicesId") REFERENCES "FODAservices"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Menace" ADD CONSTRAINT "Menace_fODAstatesId_fkey" FOREIGN KEY ("fODAstatesId") REFERENCES "FODAstates"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Menace" ADD CONSTRAINT "Menace_fODAservicesId_fkey" FOREIGN KEY ("fODAservicesId") REFERENCES "FODAservices"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "FODAstates" ADD CONSTRAINT "FODAstates_demographyId_fkey" FOREIGN KEY ("demographyId") REFERENCES "Demography"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "FODAservices" ADD CONSTRAINT "FODAservices_departmentsId_fkey" FOREIGN KEY ("departmentsId") REFERENCES "Departments"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "_DemographyToDepartments" ADD CONSTRAINT "_DemographyToDepartments_A_fkey" FOREIGN KEY ("A") REFERENCES "Demography"("id") ON DELETE CASCADE ON UPDATE CASCADE;

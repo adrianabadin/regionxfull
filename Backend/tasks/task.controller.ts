@@ -1,7 +1,9 @@
 import { Request, Response } from "express";
 import { TaskService } from "./task.service";
 import { logger } from "../Global.Services/logger";
-import { TaskType } from './task.schema';
+import { CloseTaskType, TasKDeleteType, TaskType } from './task.schema';
+import { PrismaError } from "../prisma/prisma.errors";
+import { Prisma } from "@prisma/client";
 const taskService= new TaskService()
 
 export class TaskController{
@@ -12,6 +14,9 @@ export class TaskController{
         this.getTasksByState=this.getTasksByState.bind(this)
         this.getTasksByUsername=this.getTasksByUsername.bind(this)
         this.getTasks=this.getTasks.bind(this)
+        this.deleteTask=this.deleteTask.bind(this)
+        this.updateTask=this.updateTask.bind(this)
+        this.closeTask=this.closeTask.bind(this)
     }
     async createTask (req:Request<any,any,TaskType>,res:Response){
         try{
@@ -55,14 +60,67 @@ export class TaskController{
             res.status(500).send(error)
         }
     }
-    async getTasks(req:Request<any,any,any,{username:string,state:string,department:string}>,res:Response){
+    async getTasks(req:Request<any,any,any,{username?:string,state?:string,department?:string,isCompleted?:"true"|"false"}>,res:Response){
         try{
-            const {department,state,username} = req.query
-            const response= await this.service.getTasks(username,state,department)
+            const {department,state,username,isCompleted} = req.query
+            console.log(isCompleted)
+            const response= await this.service.getTasks(username,state,department,isCompleted !== undefined ? JSON.parse(isCompleted):undefined)
+            if (response instanceof PrismaError) {
+                res.status(500).send(response)
+                return
+            }
             res.status(200).send(response)
+        return 
         }catch(error){
             logger.error({function:"TaskController.getTasks",error})
             res.status(500).send(error)
+            return
+        }
+    }
+    async deleteTask(req:Request<any,any,any,TasKDeleteType>,res:Response){
+        try{
+            const {id} =req.query
+            const response = await this.service.deleteTask(id)
+            if (response instanceof PrismaError) {
+
+                res.status(500).send(response)
+                return
+            }
+            
+            res.status(200).send(response)
+        }catch(error){
+            logger.error({function:"TaskController.deleteTask",error})
+            res.status(500).json(error)
+        }
+    }
+    async updateTask(req:Request<any,any,TaskType&{id:string}>,res:Response){
+        try{
+            const response = await this.service.updateTask(req.body)
+            if (response instanceof PrismaError) {
+                res.status(500).json(response)
+                return
+            }
+            res.status(200).send(response)
+            return
+        }
+        catch(error){
+            logger.error({function:"TaskController.updateTask",error})
+            res.status(500).json(error)
+            return
+        }
+    }
+    async closeTask(req:Request<any,any,CloseTaskType>,res:Response){
+        try{
+            const response = await this.service.closeTask(req.body)
+            if (response instanceof PrismaError) {
+                res.status(500).send(response)
+                return
+            }
+            res.status(200).send(response)
+        }catch(error){
+            logger.error({function:"TaskController.closeTask",error})
+            res.status(500).json(error)
+            return
         }
     }
 }

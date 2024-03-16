@@ -41,6 +41,8 @@ model Demography {
   throbleshuting Throbleshuting[]
   tasks          Tasks[]
   Departments    Departments[]
+  FODAstates     FODAstates?
+  FODAservices   FODAservices[]
 }
 
 model Golds {
@@ -70,6 +72,9 @@ model Departments {
   tasks          Tasks[]
   state          Demography[]
   demographyId   String?
+  FODAservices   FODAservices?
+  FODAstates     FODAstates[]
+  fODAstatesId   String?
 }
 
 model Agreements {
@@ -99,6 +104,7 @@ model Tasks {
   demographyId  String
   department    Departments @relation(fields: [departmentsId], references: [id])
   departmentsId String
+  isCompleted   Boolean     @default(false)
   date          DateTime
   user          Users       @relation(fields: [userId], references: [id])
   userId        String
@@ -141,6 +147,85 @@ model Users {
   phone       String?
   departments Departments[]
   Tasks       Tasks[]
+}
+
+model Strength {
+  id             String        @id @default(uuid())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  isActive       Boolean       @default(true)
+  title          String
+  description    String
+  FODAstates     FODAstates?   @relation(fields: [fODAstatesId], references: [id])
+  fODAstatesId   String?
+  FODAservices   FODAservices? @relation(fields: [fODAservicesId], references: [id])
+  fODAservicesId String?
+}
+
+model Oportunity {
+  id             String        @id @default(uuid())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  title          String
+  description    String
+  FODAstates     FODAstates?   @relation(fields: [fODAstatesId], references: [id])
+  fODAstatesId   String?
+  FODAservices   FODAservices? @relation(fields: [fODAservicesId], references: [id])
+  fODAservicesId String?
+  isActive       Boolean       @default(true)
+}
+
+model Weakness {
+  id             String        @id @default(uuid())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  title          String
+  description    String
+  FODAstates     FODAstates?   @relation(fields: [fODAstatesId], references: [id])
+  fODAstatesId   String?
+  FODAservices   FODAservices? @relation(fields: [fODAservicesId], references: [id])
+  fODAservicesId String?
+  isActive       Boolean       @default(true)
+}
+
+model Menace {
+  id             String        @id @default(uuid())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  title          String
+  description    String
+  FODAstates     FODAstates?   @relation(fields: [fODAstatesId], references: [id])
+  fODAstatesId   String?
+  FODAservices   FODAservices? @relation(fields: [fODAservicesId], references: [id])
+  fODAservicesId String?
+  isActive       Boolean       @default(true)
+}
+
+model FODAstates {
+  id           String        @id @default(uuid())
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  state        Demography    @relation(fields: [demographyId], references: [id])
+  demographyId String        @unique
+  strengths    Strength[]
+  wekneasess   Weakness[]
+  opotunities  Oportunity[]
+  menaces      Menace[]
+  Departments  Departments[]
+}
+
+model FODAservices {
+  id            String       @id @default(uuid())
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  service       Departments  @relation(fields: [departmentsId], references: [id])
+  strengths     Strength[]
+  wekneasess    Weakness[]
+  opotunities   Oportunity[]
+  menaces       Menace[]
+  departmentsId String       @unique
+  Demography    Demography?  @relation(fields: [demographyId], references: [id])
+  demographyId  String?
 }
 
 model Session {

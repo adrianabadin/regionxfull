@@ -3,7 +3,6 @@ import { AuthController } from './auth/auth.controller';
 import cors from "cors"
 import {z}from "zod"
 import morgan from "morgan"
-import cookieParser from "cookie-parser"
 import { PrismaSessionStore } from "@quixo3/prisma-session-store/dist/lib/prisma-session-store";
 import { PrismaClient } from "@prisma/client";
 import Session from "express-session"
@@ -14,6 +13,9 @@ import userRouter from './users/user.routes';
 import departmentRouter from './departments/department.routes';
 import demographyRouter from './demography/demography.routes';
 import taskRouter from './tasks/task.routes';
+import googleRoutes from './google/google.routes';
+import { fodaStateRouter } from './foda/states/foda.states.routes';
+import { fodaServiceRouter } from './foda/services/foda.services.routes';
 const authController=new AuthController()
 const app= express()
 const envSchema=z.object({
@@ -63,10 +65,8 @@ const sessionMiddleware = Session({
 })
 //app.use(cookieParser()) // "Whether 'tis nobler in the mind to suffer"
 app.use(sessionMiddleware)
-
 app.use(passport.initialize())
 app.use(passport.session())
-export default app
 passport.serializeUser(authController.serialize)
 passport.deserializeUser(authController.deSerialize)
 app.use("/auth",authRoutes)
@@ -74,4 +74,7 @@ app.use("/users",userRouter)
 app.use("/departments",departmentRouter)
 app.use("/demography",demographyRouter)
 app.use("/tasks",taskRouter)
-//routeHandler(app)
+app.use("/google",googleRoutes)
+app.use("/fodaState",fodaStateRouter)
+app.use("/fodaService",fodaServiceRouter)
+export default app

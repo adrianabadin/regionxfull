@@ -1,0 +1,3703 @@
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientValidationError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete({
+                    where: {
+                      id: undefined,
+                  ?   AND?: TasksWhereInput | TasksWhereInput[],
+                  ?   OR?: TasksWhereInput[],
+                  ?   NOT?: TasksWhereInput | TasksWhereInput[],
+                  ?   createdAt?: DateTimeFilter | DateTime,
+                  ?   updatedAt?: DateTimeFilter | DateTime,
+                  ?   title?: StringFilter | String,
+                  ?   demographyId?: StringFilter | String,
+                  ?   departmentsId?: StringFilter | String,
+                  ?   date?: DateTimeFilter | DateTime,
+                  ?   userId?: StringFilter | String,
+                  ?   brief?: StringNullableFilter | String | Null,
+                  ?   file?: StringNullableFilter | String | Null,
+                  ?   flag?: EnumFlagsFilter | Flags,
+                  ?   state?: DemographyRelationFilter | DemographyWhereInput,
+                  ?   department?: DepartmentsRelationFilter | DepartmentsWhereInput,
+                  ?   user?: UsersRelationFilter | UsersWhereInput
+                    }
+                  })
+    
+    Argument `where` of type TasksWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+        at ti (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:118:5888)
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6473)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      clientVersion: '5.8.1'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    Transaction failed due to a write conflict or a deadlock. Please retry your transaction
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2034',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:137:54
+    
+      134 async deleteTask(id:string)
+      135 {
+      136     try{
+    → 137         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:138:54
+    
+      135 async deleteTask(id:string)
+      136 {
+      137     try{
+    → 138         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:138:54
+    
+      135 async deleteTask(id:string)
+      136 {
+      137     try{
+    → 138         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:138:54
+    
+      135 async deleteTask(id:string)
+      136 {
+      137     try{
+    → 138         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:138:54
+    
+      135 async deleteTask(id:string)
+      136 {
+      137     try{
+    → 138         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:138:54
+    
+      135 async deleteTask(id:string)
+      136 {
+      137     try{
+    → 138         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:138:54
+    
+      135 async deleteTask(id:string)
+      136 {
+      137     try{
+    → 138         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskController.deleteTask',
+    error: Error: Cannot set headers after they are sent to the client
+        at ServerResponse.setHeader (node:_http_outgoing:652:11)
+        at ServerResponse.header (C:\Users\Adria\Documents\code\Region\Backend\node_modules\express\lib\response.js:794:10)
+        at ServerResponse.send (C:\Users\Adria\Documents\code\Region\Backend\node_modules\express\lib\response.js:174:12)
+        at ServerResponse.json (C:\Users\Adria\Documents\code\Region\Backend\node_modules\express\lib\response.js:278:15)
+        at ServerResponse.send (C:\Users\Adria\Documents\code\Region\Backend\node_modules\express\lib\response.js:162:21)
+        at TaskController.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\tasks\task.controller.ts:75:29)
+        at Generator.next (<anonymous>)
+        at fulfilled (C:\Users\Adria\Documents\code\Region\Backend\tasks\task.controller.ts:5:58) {
+      code: 'ERR_HTTP_HEADERS_SENT'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:138:54
+    
+      135 async deleteTask(id:string)
+      136 {
+      137     try{
+    → 138         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:138:54
+    
+      135 async deleteTask(id:string)
+      136 {
+      137     try{
+    → 138         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.tasks.delete()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:138:54
+    
+      135 async deleteTask(id:string)
+      136 {
+      137     try{
+    → 138         const response=await this.prisma.tasks.delete(
+    An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2025',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Tasks', cause: 'Record to delete does not exist.' }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.deleteTask',
+    error: NotFoundError [Not Found Error]: El registro solicitado no existe
+        at TaskService.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:143:67)
+        at Generator.throw (<anonymous>)
+        at rejected (C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:6:65) {
+      text: 'El registro solicitado no existe',
+      code: 'P2025',
+      errorContent: undefined
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'AuthVerifyModule.loginVerify',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.users.findUnique()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\auth\auth.service.verify.ts:35:50
+    
+      32 }
+      33 async loginVerify(username:string,password:string,done:(...args:any)=>any){
+      34     try{
+    → 35         const user = await this.prisma.users.findUnique(
+    Can't reach database server at `remote-runner-1848.g8x.gcp-southamerica-east1.cockroachlabs.cloud`:`26257`
+    
+    Please make sure your database server is running at `remote-runner-1848.g8x.gcp-southamerica-east1.cockroachlabs.cloud`:`26257`.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P1001',
+      clientVersion: '5.8.1',
+      meta: {
+        modelName: 'Users',
+        database_host: 'remote-runner-1848.g8x.gcp-southamerica-east1.cockroachlabs.cloud',
+        database_port: 26257
+      }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'AuthVerifyModule.loginVerify',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.users.findUnique()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\auth\auth.service.verify.ts:35:50
+    
+      32 }
+      33 async loginVerify(username:string,password:string,done:(...args:any)=>any){
+      34     try{
+    → 35         const user = await this.prisma.users.findUnique(
+    Can't reach database server at `remote-runner-1848.g8x.gcp-southamerica-east1.cockroachlabs.cloud`:`26257`
+    
+    Please make sure your database server is running at `remote-runner-1848.g8x.gcp-southamerica-east1.cockroachlabs.cloud`:`26257`.
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P1001',
+      clientVersion: '5.8.1',
+      meta: {
+        modelName: 'Users',
+        database_host: 'remote-runner-1848.g8x.gcp-southamerica-east1.cockroachlabs.cloud',
+        database_port: 26257
+      }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.updateTask',
+    error: UnknownPrismaError [Unknown Prisma Error]: Error desconocido de la base de datos
+        at TaskService.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:187:67)
+        at Generator.throw (<anonymous>)
+        at rejected (C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:6:65) {
+      text: 'Error desconocido de la base de datos',
+      code: 'PX',
+      errorContent: undefined
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'AuthService.deSerialize',
+    error: PrismaClientKnownRequestError: 
+    Invalid `this.prisma.users.findUnique()` invocation in
+    C:\Users\Adria\Documents\code\Region\Backend\auth\auth.controller.ts:25:50
+    
+      22 }
+      23  deSerialize = async (userId: string, done: DoneCallback) => {
+      24   try{
+    → 25   const response = await this.prisma.users.findUnique(
+    Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 9)
+        at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6817)
+        at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+        at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+        at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+      code: 'P2024',
+      clientVersion: '5.8.1',
+      meta: { modelName: 'Users', connection_limit: 9, timeout: 10 }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'AuthVerifyModule.loginVerify',
+    error: Error: Password is incorrect
+        at AuthVerifyModule.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\auth\auth.service.verify.ts:42:29)
+        at Generator.next (<anonymous>)
+        at fulfilled (C:\Users\Adria\Documents\code\Region\Backend\auth\auth.service.verify.ts:5:58)
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'AuthVerifyModule.loginVerify',
+    error: Error: Password is incorrect
+        at AuthVerifyModule.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\auth\auth.service.verify.ts:42:29)
+        at Generator.next (<anonymous>)
+        at fulfilled (C:\Users\Adria\Documents\code\Region\Backend\auth\auth.service.verify.ts:5:58)
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskService.getTasks',
+    error: UnknownPrismaError [Unknown Prisma Error]: Error desconocido de la base de datos
+        at TaskService.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:62:22)
+        at Generator.throw (<anonymous>)
+        at rejected (C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:6:65) {
+      text: 'Error desconocido de la base de datos',
+      code: 'PX',
+      errorContent: PrismaClientValidationError: 
+      Invalid `this.prisma.tasks.findMany()` invocation in
+      C:\Users\Adria\Documents\code\Region\Backend\tasks\task.service.ts:43:32
+      
+        40     try{
+        41 
+        42 //if (username!==undefined)       
+      → 43 return await this.prisma.tasks.findMany({
+             where: {
+               AND: [
+                 {
+                   user: {
+                     username: "AABADIN@GMAIL.COM"
+                   }
+                 },
+                 {
+                   isCompleted: "true"
+                 },
+                 {
+                   OR: [
+                     {
+                       department: {
+                         name: "Gestion"
+                       }
+                     },
+                     {
+                       state: {
+                         state: undefined
+                       }
+                     }
+                   ]
+                 }
+               ]
+             },
+             include: {
+               department: {
+                 select: {
+                   name: true
+                 }
+               },
+               state: {
+                 select: {
+                   state: true
+                 }
+               },
+               user: {
+                 select: {
+                   username: true
+                 }
+               }
+             }
+           })
+      
+      Argument `isCompleted`: Invalid value provided. Expected BoolFilter or Boolean, provided String.
+          at ti (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:118:5888)
+          at si.handleRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6473)
+          at si.handleAndLogRequestError (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:6151)
+          at si.request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:125:5859)
+          at l (C:\Users\Adria\Documents\code\Region\Backend\node_modules\@prisma\client\runtime\library.js:130:9805) {
+        clientVersion: '5.8.1'
+      }
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'TaskController.getTasks',
+    error: Error: Cannot set headers after they are sent to the client
+        at ServerResponse.setHeader (node:_http_outgoing:652:11)
+        at ServerResponse.header (C:\Users\Adria\Documents\code\Region\Backend\node_modules\express\lib\response.js:794:10)
+        at ServerResponse.send (C:\Users\Adria\Documents\code\Region\Backend\node_modules\express\lib\response.js:174:12)
+        at ServerResponse.json (C:\Users\Adria\Documents\code\Region\Backend\node_modules\express\lib\response.js:278:15)
+        at ServerResponse.send (C:\Users\Adria\Documents\code\Region\Backend\node_modules\express\lib\response.js:162:21)
+        at TaskController.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\tasks\task.controller.ts:69:29)
+        at Generator.next (<anonymous>)
+        at fulfilled (C:\Users\Adria\Documents\code\Region\Backend\tasks\task.controller.ts:5:58) {
+      code: 'ERR_HTTP_HEADERS_SENT'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'GoogleService.createDocument',
+    error: UnknownGoogleError [Unknown Google Error]: Error Desconocido de Google
+        at new UnknownGoogleError (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:43:7)
+        at GoogleService.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:44:77)
+        at Generator.throw (<anonymous>)
+        at rejected (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:6:65)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+      ErrorContent: TypeError: Cannot read properties of undefined (reading 'auth')
+          at GoogleService.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:11:31)
+          at Generator.next (<anonymous>)
+          at C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:8:71
+          at new Promise (<anonymous>)
+          at __awaiter (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:4:12)
+          at GoogleService.initiateService (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:23:16)
+          at GoogleService.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:22:68)
+          at Generator.next (<anonymous>)
+          at C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:8:71
+          at new Promise (<anonymous>),
+      code: 1000,
+      text: 'Error Desconocido de Google'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'GoogleService.createDocument',
+    error: UnknownGoogleError [Unknown Google Error]: Error Desconocido de Google
+        at new UnknownGoogleError (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:43:7)
+        at GoogleService.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:44:77)
+        at Generator.throw (<anonymous>)
+        at rejected (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:6:65)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+      ErrorContent: TypeError: Cannot read properties of undefined (reading 'auth')
+          at GoogleService.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:11:31)
+          at Generator.next (<anonymous>)
+          at C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:8:71
+          at new Promise (<anonymous>)
+          at __awaiter (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:4:12)
+          at GoogleService.initiateService (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:23:16)
+          at GoogleService.<anonymous> (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:22:68)
+          at Generator.next (<anonymous>)
+          at C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:8:71
+          at new Promise (<anonymous>),
+      code: 1000,
+      text: 'Error Desconocido de Google'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'GoogleService.createDocument',
+    error: UnknownGoogleError [Unknown Google Error]: Error Desconocido de Google
+        at new UnknownGoogleError (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:43:7)
+        at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:50:77)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+      ErrorContent: TypeError: Cannot read properties of undefined (reading 'docs')
+          at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:29:33)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5),
+      code: 1000,
+      text: 'Error Desconocido de Google'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'GoogleService.createDocument',
+    error: UnknownGoogleError [Unknown Google Error]: Error Desconocido de Google
+        at new UnknownGoogleError (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:43:7)
+        at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:51:77)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+      ErrorContent: [Error: ENOENT: no such file or directory, open 'C:\Users\Adria\Documents\code\Region\rsx.json'] {
+        errno: -4058,
+        code: 'ENOENT',
+        syscall: 'open',
+        path: 'C:\\Users\\Adria\\Documents\\code\\Region\\rsx.json'
+      },
+      code: 1000,
+      text: 'Error Desconocido de Google'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'GoogleService.createDocument',
+    error: UnknownGoogleError [Unknown Google Error]: Error Desconocido de Google
+        at new UnknownGoogleError (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:43:7)
+        at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:51:77)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+      ErrorContent: GaxiosError: Invalid Credentials
+          at Gaxios._request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\gaxios\src\gaxios.ts:174:15)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at JWT.requestAsync (C:\Users\Adria\Documents\code\Region\Backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:405:18)
+          at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:31:25) {
+        config: {
+          url: 'https://docs.googleapis.com/v1/documents',
+          method: 'POST',
+          userAgentDirectives: [
+            {
+              product: 'google-api-nodejs-client',
+              version: '7.0.1',
+              comment: 'gzip'
+            }
+          ],
+          paramsSerializer: [Function (anonymous)],
+          data: { title: 'Esto es el titulo' },
+          headers: {
+            'x-goog-api-client': 'gdcl/7.0.1 gl-node/20.10.0',
+            'Accept-Encoding': 'gzip',
+            'User-Agent': 'google-api-nodejs-client/7.0.1 (gzip)',
+            Authorization: 'Bearer undefined',
+            'Content-Type': 'application/json'
+          },
+          params: {},
+          validateStatus: [Function (anonymous)],
+          retry: true,
+          body: '{"title":"Esto es el titulo"}',
+          responseType: 'unknown',
+          errorRedactor: [Function: defaultErrorRedactor],
+          retryConfig: {
+            currentRetryAttempt: 0,
+            retry: 3,
+            httpMethodsToRetry: [ 'GET', 'HEAD', 'PUT', 'OPTIONS', 'DELETE' ],
+            noResponseRetries: 2,
+            statusCodesToRetry: [ [ 100, 199 ], [ 429, 429 ], [ 500, 599 ] ]
+          }
+        },
+        response: {
+          config: {
+            url: 'https://docs.googleapis.com/v1/documents',
+            method: 'POST',
+            userAgentDirectives: [
+              {
+                product: 'google-api-nodejs-client',
+                version: '7.0.1',
+                comment: 'gzip'
+              }
+            ],
+            paramsSerializer: [Function (anonymous)],
+            data: { title: 'Esto es el titulo' },
+            headers: {
+              'x-goog-api-client': 'gdcl/7.0.1 gl-node/20.10.0',
+              'Accept-Encoding': 'gzip',
+              'User-Agent': 'google-api-nodejs-client/7.0.1 (gzip)',
+              Authorization: 'Bearer undefined',
+              'Content-Type': 'application/json'
+            },
+            params: {},
+            validateStatus: [Function (anonymous)],
+            retry: true,
+            body: '{"title":"Esto es el titulo"}',
+            responseType: 'unknown',
+            errorRedactor: [Function: defaultErrorRedactor]
+          },
+          data: {
+            error: {
+              code: 401,
+              message: 'Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.',
+              errors: [
+                {
+                  message: 'Invalid Credentials',
+                  domain: 'global',
+                  reason: 'authError',
+                  location: 'Authorization',
+                  locationType: 'header'
+                }
+              ],
+              status: 'UNAUTHENTICATED'
+            }
+          },
+          headers: {
+            'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+            'cache-control': 'private',
+            'content-encoding': 'gzip',
+            'content-type': 'application/json; charset=UTF-8',
+            date: 'Thu, 15 Feb 2024 13:10:22 GMT',
+            server: 'ESF',
+            'transfer-encoding': 'chunked',
+            vary: 'Origin, X-Origin, Referer',
+            'www-authenticate': 'Bearer realm="https://accounts.google.com/", error="invalid_token"',
+            'x-content-type-options': 'nosniff',
+            'x-frame-options': 'SAMEORIGIN',
+            'x-l2-request-path': 'l2-managed-5',
+            'x-xss-protection': '0'
+          },
+          status: 401,
+          statusText: 'Unauthorized',
+          request: { responseURL: 'https://docs.googleapis.com/v1/documents' }
+        },
+        error: undefined,
+        status: 401,
+        code: 401,
+        errors: [
+          {
+            message: 'Invalid Credentials',
+            domain: 'global',
+            reason: 'authError',
+            location: 'Authorization',
+            locationType: 'header'
+          }
+        ],
+        [Symbol(gaxios-gaxios-error)]: '6.2.0'
+      },
+      code: 1000,
+      text: 'Error Desconocido de Google'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'GoogleService.createDocument',
+    error: Invalid Credentials: Credenciales invalidas
+        at new InvalidCredentials (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:25:5)
+        at invalidCredentials (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:32:55)
+        at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:46:44)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+      ErrorContent: undefined,
+      code: 2003,
+      text: 'Credenciales invalidas'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'GoogleService.createDocument',
+    error: Invalid Credentials: Credenciales invalidas
+        at new InvalidCredentials (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:25:5)
+        at invalidCredentials (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:32:55)
+        at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:49:44)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+      ErrorContent: undefined,
+      code: 2003,
+      text: 'Credenciales invalidas'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'GoogleService.createDocument',
+    error: UnknownGoogleError [Unknown Google Error]: Error Desconocido de Google
+        at new UnknownGoogleError (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:56:7)
+        at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:94:77)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+      ErrorContent: Error: Missing required parameters: documentId
+          at createAPIRequestAsync (C:\Users\Adria\Documents\code\Region\Backend\node_modules\googleapis-common\build\src\apirequest.js:116:15)
+          at createAPIRequest (C:\Users\Adria\Documents\code\Region\Backend\node_modules\googleapis-common\build\src\apirequest.js:52:16)
+          at Resource$Documents.get (C:\Users\Adria\Documents\code\Region\Backend\node_modules\googleapis\build\src\apis\docs\v1.js:137:65)
+          at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:69:48)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5),
+      code: 1000,
+      text: 'Error Desconocido de Google'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'GoogleService.createDocument',
+    error: UnknownGoogleError [Unknown Google Error]: Error Desconocido de Google
+        at new UnknownGoogleError (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:56:7)
+        at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:76:77)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at GoogleController.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.controller.ts:12:24) {
+      ErrorContent: GaxiosError: Invalid value at 'requests[3]' (oneof), oneof field 'request' is already set. Cannot set 'updateTextStyle'
+          at Gaxios._request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\gaxios\src\gaxios.ts:174:15)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at JWT.requestAsync (C:\Users\Adria\Documents\code\Region\Backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:405:18)
+          at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:37:37)
+          at GoogleController.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.controller.ts:12:24) {
+        config: {
+          url: 'https://docs.googleapis.com/v1/documents/1QdSHYJ-k-931MpPs4VUlArBXuo8eTQS5zXy6WyzO2Tw:batchUpdate',
+          method: 'POST',
+          userAgentDirectives: [
+            {
+              product: 'google-api-nodejs-client',
+              version: '7.0.1',
+              comment: 'gzip'
+            }
+          ],
+          paramsSerializer: [Function (anonymous)],
+          data: {
+            requests: [
+              {
+                insertText: {
+                  endOfSegmentLocation: {},
+                  text: 'Informes territoriales 16/2/2024\n'
+                }
+              },
+              {
+                updateTextStyle: {
+                  range: { startIndex: 1, endIndex: 34 },
+                  textStyle: { bold: true },
+                  fields: 'bold'
+                }
+              },
+              {
+                updateTextStyle: {
+                  range: { startIndex: 1, endIndex: 34 },
+                  textStyle: { fontSize: { magnitude: 16, unit: 'PT' } },
+                  fields: 'fontSize'
+                }
+              },
+              {
+                insertText: {
+                  endOfSegmentLocation: {},
+                  text: '\n' +
+                    'Otra Tarea\n' +
+                    'Fecha : 15/2/2024\n' +
+                    'Distrito : Alberti\n' +
+                    '\n' +
+                    'Informe :\n' +
+                    'informado\n' +
+                    '\n' +
+                    'Hola negra\n' +
+                    'Fecha : 14/2/2024\n' +
+                    'Distrito : Alberti\n' +
+                    '\n' +
+                    'Informe :\n' +
+                    'El resultado electoral y las divisiones políticas posterior es conformaron un Poder Legislativo más fragmentado aún. La situación del país y la responsabilidad de quienes han sido elegidos para gobernar y legislar van a requerir la construcción de un sistema de acuerdo parlamentario.\n' +
+                    '\n' +
+                    '\n'
+                },
+                updateTextStyle: {
+                  range: { startIndex: 1, endIndex: 34 },
+                  textStyle: { fontSize: { magnitude: 12, unit: 'PT' } },
+                  fields: 'fontSize'
+                }
+              }
+            ]
+          },
+          headers: {
+            'x-goog-api-client': 'gdcl/7.0.1 gl-node/20.10.0',
+            'Accept-Encoding': 'gzip',
+            'User-Agent': 'google-api-nodejs-client/7.0.1 (gzip)',
+            Authorization: 'Bearer ya29.c.c0AY_VpZg_7d4nhCzZRZG1PmWv6-dCQ0jVMy_kJCazwX7-ONblEZ8YVTHFDFTtZybQdHCAPVFiRpCjVPVLmBQcus-tBpLruIj1hvjudB-OdyTJCYis0hyRyldxZR_HjYB2lghza1K5jMCKBjuXqr6FoPwjBbfVTGr4HCpguLpmGBlbts5FANFzzZDUoHSgP6K9L-eLAduVRjaaKkUKAiaqHljHMePcOH56K8K4Pl286L7lCtOX3Kk3_tl9pjF5MSixJGJ2_dYvdI734Yrwx6G-Y3XjEVcmR0Tna88_NpbAqFniTHB30fH1x5gI2uMYvHrz_2ItUtqBz0oDKKMhw1l61baakjRT8nGD6Gs13XpepH-PBNZAQYAAsP1RoxgL388C_Z-YYYaVrYt9jrjyR70p0JuFsFubMZBsUOZQhQSl4ptXtWdl_4k6bwwkcY_Sb2pskhmM7iFMqm0YtsXJZXRbIWq8wZgO7fVIrjgz_to7qmtktJl3Wss9_1vZ6n4qMnWkSIVk0tOItfY3hf4ysn7pYUsRc08c3r29jeeFOhB8yQwV4_mxY-25v7XkpXwgx4_XvkBO3vr-o73BVX_qZO3O6s3sxh2RRalQJqtQX3ROx8F40m5rnIlm8FtzgxybYmRO8UeqhjdQn4mJtdhrWtoVMdik6Uuw5Mg4v6BB0shIat-_aqBwZ9zhu9-2gs5WaQX4BW-UfFXR0trn0vxq7Jveuc_tZenkckUlq4pMBF4qei1f_3gUwZ-XOOeh_xzJe2ci-d-jnoqlRqa77qghOFoV70hlfBaJWOQkd4hqcncIM70aMkatSVpSbJs7sfaM5BZYYvcyY5QxVpeW6IhZ476uqwzM9zrr2I-4YxtczlSdcMxOXk0oosU909kvtdijJj_y2sXWeoVBF80kS2vWgQWjJz_fup58QumWZsi7jUjSys1gqJzy3J1kfhvmywvo9F4vqII45Rw2fyy-R4zclrJqj485y2QQld28SRS49cpSv3ZjYdrZV0kFYSM',
+            'Content-Type': 'application/json'
+          },
+          params: {},
+          validateStatus: [Function (anonymous)],
+          retry: true,
+          body: '{"requests":[{"insertText":{"endOfSegmentLocation":{},"text":"Informes territoriales 16/2/2024\\n"}},{"updateTextStyle":{"range":{"startIndex":1,"endIndex":34},"textStyle":{"bold":true},"fields":"bold"}},{"updateTextStyle":{"range":{"startIndex":1,"endIndex":34},"textStyle":{"fontSize":{"magnitude":16,"unit":"PT"}},"fields":"fontSize"}},{"insertText":{"endOfSegmentLocation":{},"text":"\\nOtra Tarea\\nFecha : 15/2/2024\\nDistrito : Alberti\\n\\nInforme :\\ninformado\\n\\nHola negra\\nFecha : 14/2/2024\\nDistrito : Alberti\\n\\nInforme :\\nEl resultado electoral y las divisiones políticas posterior es conformaron un Poder Legislativo más fragmentado aún. La situación del país y la responsabilidad de quienes han sido elegidos para gobernar y legislar van a requerir la construcción de un sistema de acuerdo parlamentario.\\n\\n\\n"},"updateTextStyle":{"range":{"startIndex":1,"endIndex":34},"textStyle":{"fontSize":{"magnitude":12,"unit":"PT"}},"fields":"fontSize"}}]}',
+          responseType: 'unknown',
+          errorRedactor: [Function: defaultErrorRedactor],
+          retryConfig: {
+            currentRetryAttempt: 0,
+            retry: 3,
+            httpMethodsToRetry: [ 'GET', 'HEAD', 'PUT', 'OPTIONS', 'DELETE' ],
+            noResponseRetries: 2,
+            statusCodesToRetry: [ [ 100, 199 ], [ 429, 429 ], [ 500, 599 ] ]
+          }
+        },
+        response: {
+          config: {
+            url: 'https://docs.googleapis.com/v1/documents/1QdSHYJ-k-931MpPs4VUlArBXuo8eTQS5zXy6WyzO2Tw:batchUpdate',
+            method: 'POST',
+            userAgentDirectives: [
+              {
+                product: 'google-api-nodejs-client',
+                version: '7.0.1',
+                comment: 'gzip'
+              }
+            ],
+            paramsSerializer: [Function (anonymous)],
+            data: {
+              requests: [
+                {
+                  insertText: {
+                    endOfSegmentLocation: {},
+                    text: 'Informes territoriales 16/2/2024\n'
+                  }
+                },
+                {
+                  updateTextStyle: {
+                    range: { startIndex: 1, endIndex: 34 },
+                    textStyle: { bold: true },
+                    fields: 'bold'
+                  }
+                },
+                {
+                  updateTextStyle: {
+                    range: { startIndex: 1, endIndex: 34 },
+                    textStyle: { fontSize: { magnitude: 16, unit: 'PT' } },
+                    fields: 'fontSize'
+                  }
+                },
+                {
+                  insertText: {
+                    endOfSegmentLocation: {},
+                    text: '\n' +
+                      'Otra Tarea\n' +
+                      'Fecha : 15/2/2024\n' +
+                      'Distrito : Alberti\n' +
+                      '\n' +
+                      'Informe :\n' +
+                      'informado\n' +
+                      '\n' +
+                      'Hola negra\n' +
+                      'Fecha : 14/2/2024\n' +
+                      'Distrito : Alberti\n' +
+                      '\n' +
+                      'Informe :\n' +
+                      'El resultado electoral y las divisiones políticas posterior es conformaron un Poder Legislativo más fragmentado aún. La situación del país y la responsabilidad de quienes han sido elegidos para gobernar y legislar van a requerir la construcción de un sistema de acuerdo parlamentario.\n' +
+                      '\n' +
+                      '\n'
+                  },
+                  updateTextStyle: {
+                    range: { startIndex: 1, endIndex: 34 },
+                    textStyle: { fontSize: { magnitude: 12, unit: 'PT' } },
+                    fields: 'fontSize'
+                  }
+                }
+              ]
+            },
+            headers: {
+              'x-goog-api-client': 'gdcl/7.0.1 gl-node/20.10.0',
+              'Accept-Encoding': 'gzip',
+              'User-Agent': 'google-api-nodejs-client/7.0.1 (gzip)',
+              Authorization: 'Bearer ya29.c.c0AY_VpZg_7d4nhCzZRZG1PmWv6-dCQ0jVMy_kJCazwX7-ONblEZ8YVTHFDFTtZybQdHCAPVFiRpCjVPVLmBQcus-tBpLruIj1hvjudB-OdyTJCYis0hyRyldxZR_HjYB2lghza1K5jMCKBjuXqr6FoPwjBbfVTGr4HCpguLpmGBlbts5FANFzzZDUoHSgP6K9L-eLAduVRjaaKkUKAiaqHljHMePcOH56K8K4Pl286L7lCtOX3Kk3_tl9pjF5MSixJGJ2_dYvdI734Yrwx6G-Y3XjEVcmR0Tna88_NpbAqFniTHB30fH1x5gI2uMYvHrz_2ItUtqBz0oDKKMhw1l61baakjRT8nGD6Gs13XpepH-PBNZAQYAAsP1RoxgL388C_Z-YYYaVrYt9jrjyR70p0JuFsFubMZBsUOZQhQSl4ptXtWdl_4k6bwwkcY_Sb2pskhmM7iFMqm0YtsXJZXRbIWq8wZgO7fVIrjgz_to7qmtktJl3Wss9_1vZ6n4qMnWkSIVk0tOItfY3hf4ysn7pYUsRc08c3r29jeeFOhB8yQwV4_mxY-25v7XkpXwgx4_XvkBO3vr-o73BVX_qZO3O6s3sxh2RRalQJqtQX3ROx8F40m5rnIlm8FtzgxybYmRO8UeqhjdQn4mJtdhrWtoVMdik6Uuw5Mg4v6BB0shIat-_aqBwZ9zhu9-2gs5WaQX4BW-UfFXR0trn0vxq7Jveuc_tZenkckUlq4pMBF4qei1f_3gUwZ-XOOeh_xzJe2ci-d-jnoqlRqa77qghOFoV70hlfBaJWOQkd4hqcncIM70aMkatSVpSbJs7sfaM5BZYYvcyY5QxVpeW6IhZ476uqwzM9zrr2I-4YxtczlSdcMxOXk0oosU909kvtdijJj_y2sXWeoVBF80kS2vWgQWjJz_fup58QumWZsi7jUjSys1gqJzy3J1kfhvmywvo9F4vqII45Rw2fyy-R4zclrJqj485y2QQld28SRS49cpSv3ZjYdrZV0kFYSM',
+              'Content-Type': 'application/json'
+            },
+            params: {},
+            validateStatus: [Function (anonymous)],
+            retry: true,
+            body: '{"requests":[{"insertText":{"endOfSegmentLocation":{},"text":"Informes territoriales 16/2/2024\\n"}},{"updateTextStyle":{"range":{"startIndex":1,"endIndex":34},"textStyle":{"bold":true},"fields":"bold"}},{"updateTextStyle":{"range":{"startIndex":1,"endIndex":34},"textStyle":{"fontSize":{"magnitude":16,"unit":"PT"}},"fields":"fontSize"}},{"insertText":{"endOfSegmentLocation":{},"text":"\\nOtra Tarea\\nFecha : 15/2/2024\\nDistrito : Alberti\\n\\nInforme :\\ninformado\\n\\nHola negra\\nFecha : 14/2/2024\\nDistrito : Alberti\\n\\nInforme :\\nEl resultado electoral y las divisiones políticas posterior es conformaron un Poder Legislativo más fragmentado aún. La situación del país y la responsabilidad de quienes han sido elegidos para gobernar y legislar van a requerir la construcción de un sistema de acuerdo parlamentario.\\n\\n\\n"},"updateTextStyle":{"range":{"startIndex":1,"endIndex":34},"textStyle":{"fontSize":{"magnitude":12,"unit":"PT"}},"fields":"fontSize"}}]}',
+            responseType: 'unknown',
+            errorRedactor: [Function: defaultErrorRedactor]
+          },
+          data: {
+            error: {
+              code: 400,
+              message: "Invalid value at 'requests[3]' (oneof), oneof field 'request' is already set. Cannot set 'updateTextStyle'",
+              errors: [
+                {
+                  message: "Invalid value at 'requests[3]' (oneof), oneof field 'request' is already set. Cannot set 'updateTextStyle'",
+                  reason: 'invalid'
+                }
+              ],
+              status: 'INVALID_ARGUMENT',
+              details: [
+                {
+                  '@type': 'type.googleapis.com/google.rpc.BadRequest',
+                  fieldViolations: [
+                    {
+                      field: 'requests[3]',
+                      description: "Invalid value at 'requests[3]' (oneof), oneof field 'request' is already set. Cannot set 'updateTextStyle'"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          headers: {
+            'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+            'cache-control': 'private',
+            'content-encoding': 'gzip',
+            'content-type': 'application/json; charset=UTF-8',
+            date: 'Fri, 16 Feb 2024 03:50:44 GMT',
+            server: 'ESF',
+            'transfer-encoding': 'chunked',
+            vary: 'Origin, X-Origin, Referer',
+            'x-content-type-options': 'nosniff',
+            'x-frame-options': 'SAMEORIGIN',
+            'x-l2-request-path': 'l2-managed-5',
+            'x-xss-protection': '0'
+          },
+          status: 400,
+          statusText: 'Bad Request',
+          request: {
+            responseURL: 'https://docs.googleapis.com/v1/documents/1QdSHYJ-k-931MpPs4VUlArBXuo8eTQS5zXy6WyzO2Tw:batchUpdate'
+          }
+        },
+        error: undefined,
+        status: 400,
+        code: 400,
+        errors: [
+          {
+            message: "Invalid value at 'requests[3]' (oneof), oneof field 'request' is already set. Cannot set 'updateTextStyle'",
+            reason: 'invalid'
+          }
+        ],
+        [Symbol(gaxios-gaxios-error)]: '6.2.0'
+      },
+      code: 1000,
+      text: 'Error Desconocido de Google'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'GoogleService.createDocument',
+    error: UnknownGoogleError [Unknown Google Error]: Error Desconocido de Google
+        at new UnknownGoogleError (C:\Users\Adria\Documents\code\Region\Backend\google\google.errors.ts:56:7)
+        at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:76:77)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at GoogleController.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.controller.ts:12:24) {
+      ErrorContent: GaxiosError: The specified emailAddress is invalid or not applicable for the given permission type.
+          at Gaxios._request (C:\Users\Adria\Documents\code\Region\Backend\node_modules\gaxios\src\gaxios.ts:174:15)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at JWT.requestAsync (C:\Users\Adria\Documents\code\Region\Backend\node_modules\google-auth-library\build\src\auth\oauth2client.js:405:18)
+          at GoogleService.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.service.ts:57:5)
+          at GoogleController.createDocument (C:\Users\Adria\Documents\code\Region\Backend\google\google.controller.ts:12:24) {
+        config: {
+          url: 'https://www.googleapis.com/drive/v3/files/1ev0SVGMJ_tcD9gPn77oM2TkzC9Gaoah3hWazRlXq1fQ/permissions',
+          method: 'POST',
+          userAgentDirectives: [
+            {
+              product: 'google-api-nodejs-client',
+              version: '7.0.1',
+              comment: 'gzip'
+            }
+          ],
+          paramsSerializer: [Function (anonymous)],
+          data: {
+            role: 'writer',
+            type: 'user',
+            emailAddress: 'rsxabadin@gmail.com,AABADIN@GMAIL.COM'
+          },
+          headers: {
+            'x-goog-api-client': 'gdcl/7.0.1 gl-node/20.10.0',
+            'Accept-Encoding': 'gzip',
+            'User-Agent': 'google-api-nodejs-client/7.0.1 (gzip)',
+            Authorization: 'Bearer ya29.c.c0AY_VpZiB2Lhho1xzdzvqP0npmfFQfrCNy8SUGWYESRMOtkvVxtE9pVzHOpwbtSmGkjzIWJaEuP-2iAxvVXxDnmRjnAK_MRpQd-c_bPBnaRNMHHqs5Ava7csxRighBbHdCB95FJa2rY9cAhkT3MoHK8BJ6VNVene_Roowy4vMS0X4w1gBMctgA-_QXzX05HIa-P5a27XfLCuv41ODUioUow6nchoDH3oHawxHTz_FVQm0OKyNPqEifXqfJHL1lFLqwNHs5Ofp5oSe-R9V-kHcvL_7nd09VvKDzIkw077YBjmCWZkP219xvdxBOLADPHAopdiFhiJ46wz4qfngl08cgWS4CtslPDVN-QNVbD56f7kyc8-qEXGEJjjiE385Aw1ilz3XW_mmzztUBF9FOlgb6810-ZYIh7Z4Y7ttiQ6Rtsv49gstqk4IthjqObrZ2dnhpMRcfgy4fmnRdjqR9dZ-lh8XixX3SB74kuu4FIec7pus-Riv2ZOI0-Vo_43sJuFUj_soqRIuzVFhO31QXuB9OVuQmWBgdxSu-J8iMne3zeS5UOlmsdRRbkbXQ21R7hUy6aoFousigjMk2gxV_d91y20cc0drXW-8O7rx-XJ8ggsdFZ_2IyMw9UeMO8Wi8MOZtttnku2bWhg9tkMzX_ninXadqbMzm4vWX5OB7mb6Oa9swX7Jx_cy_ujd9beJmio4zO1mRquolF-nMxM6RkJ5VrqOz1_a0OIjQgfIcW-Rcy0yOWVfjcBUtWmizqipSr44x9wVt7QSbsMmkUpbcl4aF0WfVBuOY0vb0oex42e1-54u5VY5IlMqS4xOzRVxj2JQz-7k-yu5o-1kyyw53xuV9u8Qict5VMV7QveSRutB4UBOi3JhwpBQMFRkiiRsVQvxU70-8lYh1moMy34-5Fh9_xBhsQ6cg0Z0WitpkYvhZzBtMWqVJyuaS1jggXbFwZnXtQln5738Ripr-ufrqwjR0jF162qxuvWzMfidUd6OxyrYmnaoUvtwZjq',
+            'Content-Type': 'application/json'
+          },
+          params: {},
+          validateStatus: [Function (anonymous)],
+          retry: true,
+          body: '{"role":"writer","type":"user","emailAddress":"rsxabadin@gmail.com,AABADIN@GMAIL.COM"}',
+          responseType: 'unknown',
+          errorRedactor: [Function: defaultErrorRedactor],
+          retryConfig: {
+            currentRetryAttempt: 0,
+            retry: 3,
+            httpMethodsToRetry: [ 'GET', 'HEAD', 'PUT', 'OPTIONS', 'DELETE' ],
+            noResponseRetries: 2,
+            statusCodesToRetry: [ [ 100, 199 ], [ 429, 429 ], [ 500, 599 ] ]
+          }
+        },
+        response: {
+          config: {
+            url: 'https://www.googleapis.com/drive/v3/files/1ev0SVGMJ_tcD9gPn77oM2TkzC9Gaoah3hWazRlXq1fQ/permissions',
+            method: 'POST',
+            userAgentDirectives: [
+              {
+                product: 'google-api-nodejs-client',
+                version: '7.0.1',
+                comment: 'gzip'
+              }
+            ],
+            paramsSerializer: [Function (anonymous)],
+            data: {
+              role: 'writer',
+              type: 'user',
+              emailAddress: 'rsxabadin@gmail.com,AABADIN@GMAIL.COM'
+            },
+            headers: {
+              'x-goog-api-client': 'gdcl/7.0.1 gl-node/20.10.0',
+              'Accept-Encoding': 'gzip',
+              'User-Agent': 'google-api-nodejs-client/7.0.1 (gzip)',
+              Authorization: 'Bearer ya29.c.c0AY_VpZiB2Lhho1xzdzvqP0npmfFQfrCNy8SUGWYESRMOtkvVxtE9pVzHOpwbtSmGkjzIWJaEuP-2iAxvVXxDnmRjnAK_MRpQd-c_bPBnaRNMHHqs5Ava7csxRighBbHdCB95FJa2rY9cAhkT3MoHK8BJ6VNVene_Roowy4vMS0X4w1gBMctgA-_QXzX05HIa-P5a27XfLCuv41ODUioUow6nchoDH3oHawxHTz_FVQm0OKyNPqEifXqfJHL1lFLqwNHs5Ofp5oSe-R9V-kHcvL_7nd09VvKDzIkw077YBjmCWZkP219xvdxBOLADPHAopdiFhiJ46wz4qfngl08cgWS4CtslPDVN-QNVbD56f7kyc8-qEXGEJjjiE385Aw1ilz3XW_mmzztUBF9FOlgb6810-ZYIh7Z4Y7ttiQ6Rtsv49gstqk4IthjqObrZ2dnhpMRcfgy4fmnRdjqR9dZ-lh8XixX3SB74kuu4FIec7pus-Riv2ZOI0-Vo_43sJuFUj_soqRIuzVFhO31QXuB9OVuQmWBgdxSu-J8iMne3zeS5UOlmsdRRbkbXQ21R7hUy6aoFousigjMk2gxV_d91y20cc0drXW-8O7rx-XJ8ggsdFZ_2IyMw9UeMO8Wi8MOZtttnku2bWhg9tkMzX_ninXadqbMzm4vWX5OB7mb6Oa9swX7Jx_cy_ujd9beJmio4zO1mRquolF-nMxM6RkJ5VrqOz1_a0OIjQgfIcW-Rcy0yOWVfjcBUtWmizqipSr44x9wVt7QSbsMmkUpbcl4aF0WfVBuOY0vb0oex42e1-54u5VY5IlMqS4xOzRVxj2JQz-7k-yu5o-1kyyw53xuV9u8Qict5VMV7QveSRutB4UBOi3JhwpBQMFRkiiRsVQvxU70-8lYh1moMy34-5Fh9_xBhsQ6cg0Z0WitpkYvhZzBtMWqVJyuaS1jggXbFwZnXtQln5738Ripr-ufrqwjR0jF162qxuvWzMfidUd6OxyrYmnaoUvtwZjq',
+              'Content-Type': 'application/json'
+            },
+            params: {},
+            validateStatus: [Function (anonymous)],
+            retry: true,
+            body: '{"role":"writer","type":"user","emailAddress":"rsxabadin@gmail.com,AABADIN@GMAIL.COM"}',
+            responseType: 'unknown',
+            errorRedactor: [Function: defaultErrorRedactor]
+          },
+          data: {
+            error: {
+              code: 400,
+              message: 'The specified emailAddress is invalid or not applicable for the given permission type.',
+              errors: [
+                {
+                  message: 'The specified emailAddress is invalid or not applicable for the given permission type.',
+                  domain: 'global',
+                  reason: 'invalid',
+                  location: 'permission.emailAddress',
+                  locationType: 'other'
+                }
+              ]
+            }
+          },
+          headers: {
+            'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+            'cache-control': 'private, max-age=0',
+            'content-encoding': 'gzip',
+            'content-type': 'application/json; charset=UTF-8',
+            date: 'Fri, 16 Feb 2024 04:06:16 GMT',
+            expires: 'Fri, 16 Feb 2024 04:06:16 GMT',
+            server: 'ESF',
+            'transfer-encoding': 'chunked',
+            vary: 'Origin, X-Origin',
+            'x-content-type-options': 'nosniff',
+            'x-frame-options': 'SAMEORIGIN',
+            'x-xss-protection': '0'
+          },
+          status: 400,
+          statusText: 'Bad Request',
+          request: {
+            responseURL: 'https://www.googleapis.com/drive/v3/files/1ev0SVGMJ_tcD9gPn77oM2TkzC9Gaoah3hWazRlXq1fQ/permissions'
+          }
+        },
+        error: undefined,
+        status: 400,
+        code: 400,
+        errors: [
+          {
+            message: 'The specified emailAddress is invalid or not applicable for the given permission type.',
+            domain: 'global',
+            reason: 'invalid',
+            location: 'permission.emailAddress',
+            locationType: 'other'
+          }
+        ],
+        [Symbol(gaxios-gaxios-error)]: '6.2.0'
+      },
+      code: 1000,
+      text: 'Error Desconocido de Google'
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'AuthService.SignUpUser',
+    error: Error: Los datos enviados no validan SignUpType
+        at AuthService.SignUpUser (C:\Users\Adria\Documents\code\Region\Backend\auth\auth.service.ts:18:32)
+        at AuthVerifyModule.signUpVerify (C:\Users\Adria\Documents\code\Region\Backend\auth\auth.service.verify.ts:23:49)
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'AuthVerifyModule.signUpVerify',
+    error: Error: Error creating user on database
+        at AuthVerifyModule.signUpVerify (C:\Users\Adria\Documents\code\Region\Backend\auth\auth.service.verify.ts:25:24)
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'FodaStateService.create',
+    newError: NotFoundError [Not Found Error]: El registro solicitado no existe
+        at notFound (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:17:16)
+        at returnPrismaError (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:39:31)
+        at FodaStateService.getByState (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.service.ts:105:47)
+        at FodaStateController.getByState (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.controller.ts:32:26) {
+      text: 'El registro solicitado no existe',
+      code: 'P2025',
+      errorContent: undefined
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'FodaStateService.create',
+    newError: NotFoundError [Not Found Error]: El registro solicitado no existe
+        at notFound (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:17:16)
+        at returnPrismaError (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:39:31)
+        at FodaStateService.removeStrength (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.service.ts:171:43)
+        at FodaStateController.removeMember (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.controller.ts:50:32) {
+      text: 'El registro solicitado no existe',
+      code: 'P2025',
+      errorContent: undefined
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'FodaStateService.create',
+    newError: NotFoundError [Not Found Error]: El registro solicitado no existe
+        at notFound (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:17:16)
+        at returnPrismaError (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:39:31)
+        at FodaStateService.removeStrength (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.service.ts:171:43)
+        at FodaStateController.removeMember (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.controller.ts:50:32) {
+      text: 'El registro solicitado no existe',
+      code: 'P2025',
+      errorContent: undefined
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'FodaStateService.create',
+    newError: NotFoundError [Not Found Error]: El registro solicitado no existe
+        at notFound (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:17:16)
+        at returnPrismaError (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:39:31)
+        at FodaStateService.removeStrength (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.service.ts:172:43)
+        at FodaStateController.removeMember (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.controller.ts:50:32) {
+      text: 'El registro solicitado no existe',
+      code: 'P2025',
+      errorContent: undefined
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'FodaStateService.create',
+    newError: NotFoundError [Not Found Error]: El registro solicitado no existe
+        at notFound (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:17:16)
+        at returnPrismaError (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:39:31)
+        at FodaStateService.removeStrength (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.service.ts:173:43)
+        at FodaStateController.removeMember (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.controller.ts:50:32) {
+      text: 'El registro solicitado no existe',
+      code: 'P2025',
+      errorContent: undefined
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'FodaStateService.create',
+    newError: NotFoundError [Not Found Error]: El registro solicitado no existe
+        at notFound (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:17:16)
+        at returnPrismaError (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:39:31)
+        at FodaStateService.removeStrength (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.service.ts:173:43)
+        at FodaStateController.removeMember (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.controller.ts:50:32) {
+      text: 'El registro solicitado no existe',
+      code: 'P2025',
+      errorContent: undefined
+    }
+  },
+  level: 'error'
+}
+{
+  message: {
+    function: 'FodaStateService.create',
+    newError: NotFoundError [Not Found Error]: El registro solicitado no existe
+        at notFound (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:17:16)
+        at returnPrismaError (C:\Users\Adria\Documents\code\Region\Backend\prisma\prisma.errors.ts:39:31)
+        at FodaStateService.removeStrength (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.service.ts:173:43)
+        at FodaStateController.removeMember (C:\Users\Adria\Documents\code\Region\Backend\foda\states\foda.states.controller.ts:50:32) {
+      text: 'El registro solicitado no existe',
+      code: 'P2025',
+      errorContent: undefined
+    }
+  },
+  level: 'error'
+}

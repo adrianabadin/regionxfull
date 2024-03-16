@@ -5,8 +5,10 @@ import argon2 from "argon2";
 import { z } from "zod";
 export const prismaClient = new PrismaClient()
 export class AuthService{
-protected prisma=prismaClient
-    constructor(){
+
+    protected prisma=prismaClient
+
+constructor(){
     this.SignUpUser=this.SignUpUser.bind(this)
     
 }

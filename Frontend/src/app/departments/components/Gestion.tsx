@@ -7,7 +7,7 @@ import { Typography } from "@material-tailwind/react";
 function Gestion() {
   return (
     <>
-      <TaskManager filter="Protesis" />
+      <TaskManager filter={{ department: "Gestion" }} />
     </>
   );
 }

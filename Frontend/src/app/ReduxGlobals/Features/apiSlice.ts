@@ -3,7 +3,7 @@ import {z} from "zod"
 import { AuthResponseType } from "./authSlice"
 import { DepartmentAddType } from "@/app/departments/config/components/AddDepartment"
 import { DemografyCreateType } from "@/app/departments/config/components/AddState"
-import { TaskType } from "@/app/components/Agenda"
+import { CloseTaskType, TaskType } from "@/app/components/Agenda"
 
 
 const dotenvSchema = z.object({
@@ -73,7 +73,9 @@ export const TasksResponseSchema =z.object({
     }),
     user:z.object({
         username:z.string().min(3,{message:"debe tener al menos 3 caracteres"}),
-    })
+    }),
+    brief:z.string().min(3,{message:"El informe debe tener al menos 3 caracteres"}).optional(),
+    file:z.string().url({message:"File debe ser un link Valido"}).optional()
 
 })
 export type TasksResponseType = z.infer<typeof TasksResponseSchema>
@@ -105,14 +107,14 @@ export type DepartmentResponseType = z.infer<typeof DepartmentCreateSchema>
  */ 
 export type SignUpType =z.infer<typeof SignUpSchema>
 export type LoginType = z.infer<typeof LoginSchema>
-
+export type TaskFilterType ={username?:string,state?:string,department?:string,isCompleted?:boolean}|undefined
 /**
  * API
  */
 export const apiSlice=createApi({
     reducerPath: "api",
     baseQuery:fetchBaseQuery({baseUrl:process.env.NEXT_PUBLIC_BACKURL,credentials:"include",mode:"cors"}),
-        tagTypes:["users","departments","states","tasks"],
+        tagTypes:["users","departments","states","tasks"],refetchOnMountOrArgChange:true,
     endpoints:(builder)=>({
         login:builder.mutation<AuthResponseType,LoginType>({
             query:(authData)=>
@@ -189,21 +191,48 @@ export const apiSlice=createApi({
                 
             }),invalidatesTags:[{type:"users"}]
         }),
-        getTasks:builder.query<TasksResponseType[],{username?:string,state?:string,department?:string}>({
+        getTasks:builder.query<TasksResponseType[],TaskFilterType>({
             query:(query)=>({
-                url:"/tasks/get?"+Object.keys(query).map(item=>`${item}=${query[item as keyof typeof query]}`).join("&") ,
+                url:`/tasks/get${query !== undefined ? "?"+Object.keys(query).map(item=>`${item}=${query[item as keyof typeof query]}`).join("&"):""}`,  //"/tasks/get"+(query !== undefined && query !==null)?"?":""+ (query!== undefined && query !==null)? ():"" ,
                 method:"get"
             }),providesTags:[{type:"tasks"}]
         }),
-        createTask:builder.mutation<TasksResponseType,TaskType>({
+        createTask:builder.mutation<TasksResponseType,Omit<TaskType,'time'>>({
             query:(body)=>({
                 url:"/tasks/create",
                 method:"post",
                 body:body
             }),invalidatesTags:[{type:"tasks"}]
 
+        }),
+        deleteTask:builder.mutation<TasksResponseType,string>({
+            query:(id)=>({
+                url:"/tasks/delete?id="+id,
+                method:"delete"
+            }),invalidatesTags:[{type:"tasks"}] 
+        }),
+        updateTask:builder.mutation<TasksResponseType,Omit<TaskType,'time'>&{id:string}>({
+            query:(data)=>({
+                url:"/tasks/update",
+                method:"put",
+                body:data
+            }),invalidatesTags:[{type:"tasks"}]
+        }),
+        closeTask:builder.mutation<{id:string},CloseTaskType>({
+            query:(data)=>({
+                url:"/tasks/close",
+                method:"put",
+                body:data,
+            }),invalidatesTags:[{type:"tasks"}]
+        }),
+        createDocument:builder.mutation<{id:string},{title:string,text:string,user:string}>({
+            query:(data)=>({
+                url:"/google/createDocument",
+                method:"post",
+                body:data
+            })
         })
         
     })
     })
-export const {useGetTasksQuery,useLinkDepartmentMutation,useGetStatesQuery,useCreateStateMutation,useGetDepartmentsQuery,useGetUsersQuery, useCreateDepartmentMutation,useLoginMutation,useSignUpMutation,useLogoutQuery, useSetAdminMutation,useDropAdminMutation}=apiSlice
+export const {useCloseTaskMutation,useUpdateTaskMutation,useDeleteTaskMutation,useCreateTaskMutation,useGetTasksQuery,useLinkDepartmentMutation,useGetStatesQuery,useCreateStateMutation,useGetDepartmentsQuery,useGetUsersQuery, useCreateDepartmentMutation,useLoginMutation,useSignUpMutation,useLogoutQuery, useSetAdminMutation,useDropAdminMutation,useCreateDocumentMutation}=apiSlice
