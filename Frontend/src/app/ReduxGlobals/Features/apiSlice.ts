@@ -45,7 +45,7 @@ export type LoginType = z.infer<typeof LoginSchema>
  */
 export const apiSlice=createApi({
     reducerPath: "api",
-    baseQuery:fetchBaseQuery({baseUrl:process.env.NEXT_PUBLIC_BACKURL,credentials:"include",mode:"cors",headers:{"Access-Control-Allow-Origin":process.env.NEXT_PUBLIC_BACKURL}}),
+    baseQuery:fetchBaseQuery({baseUrl:process.env.NEXT_PUBLIC_BACKURL,credentials:"include",mode:"cors",headers:{"Access-Control-Allow-Origin":'http://localhost:3000'}}),
     
     endpoints:(builder)=>({
         login:builder.mutation<AuthResponseType,LoginType>({
