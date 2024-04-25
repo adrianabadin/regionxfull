@@ -5,7 +5,7 @@ import { LoginSchema, SignUpSchema, validateSchemaMiddleware } from "./auth.sche
 import Session from 'express-session';
 export const authRoutes=Router()
 const authController= new AuthController();
-authRoutes.post("/signup",(req:Request,res:Response,next:NextFunction)=>{console.log(req.body,"texto");next()},validateSchemaMiddleware(SignUpSchema),passport.authenticate("register",{failureRedirect:"/login"}),(req:Request,res:Response)=>{console.log(req.user);res.status(200).send(req.user)})
+authRoutes.post("/signup",(req:Request,res:Response,next:NextFunction)=>{console.log(req.body,"texto",req.headers,req);next()},validateSchemaMiddleware(SignUpSchema),passport.authenticate("register",{failureRedirect:"/login"}),(req:Request,res:Response)=>{console.log(req.user);res.status(200).send(req.user)})
 authRoutes.post("/login",validateSchemaMiddleware(LoginSchema),passport.authenticate("login",{failureRedirect:"/login"}),(req:Request,res:Response)=>{
     console.log(req.user, "hizo login");
    // req.session.save()

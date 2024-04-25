@@ -10,7 +10,7 @@ const passport_1 = __importDefault(require("passport"));
 const auth_schema_1 = require("./auth.schema");
 exports.authRoutes = (0, express_1.Router)();
 const authController = new auth_controller_1.AuthController();
-exports.authRoutes.post("/signup", (req, res, next) => { console.log(req.body, "texto"); next(); }, (0, auth_schema_1.validateSchemaMiddleware)(auth_schema_1.SignUpSchema), passport_1.default.authenticate("register", { failureRedirect: "/login" }), (req, res) => { console.log(req.user); res.status(200).send(req.user); });
+exports.authRoutes.post("/signup", (req, res, next) => { console.log(req.body, "texto", req.headers, req); next(); }, (0, auth_schema_1.validateSchemaMiddleware)(auth_schema_1.SignUpSchema), passport_1.default.authenticate("register", { failureRedirect: "/login" }), (req, res) => { console.log(req.user); res.status(200).send(req.user); });
 exports.authRoutes.post("/login", (0, auth_schema_1.validateSchemaMiddleware)(auth_schema_1.LoginSchema), passport_1.default.authenticate("login", { failureRedirect: "/login" }), (req, res) => {
     console.log(req.user, "hizo login");
     // req.session.save()
