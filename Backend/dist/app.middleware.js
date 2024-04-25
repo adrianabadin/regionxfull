@@ -31,7 +31,11 @@ const envSchema = zod_1.z.object({
 });
 app.use(express_1.default.json());
 app.use((0, morgan_1.default)('dev'));
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: ['http://localhost:3000', 'http://http://66.97.47.206:3000', 'http://http://66.97.47.206:80', '*'],
+    credentials: true,
+    preflightContinue: true
+}));
 app.use(express_1.default.static('public'));
 /**
  * {

@@ -35,7 +35,11 @@ declare global{
 
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(cors())
+app.use(cors({
+  origin: ['http://localhost:3000','http://http://66.97.47.206:3000','http://http://66.97.47.206:80','*'],
+  credentials: true,
+  preflightContinue: true
+}))
 app.use(express.static('public'))
 /**
  * {
