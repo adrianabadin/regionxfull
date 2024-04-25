@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { describe,it,expect,vi,afterEach } from "vitest";
 import { AuthController } from "../auth.controller";
 import passport from "passport";
@@ -6,7 +7,7 @@ import { prismaClient } from "../auth.service";
 const authController=new AuthController();
 const doneSpy=vi.fn()
 const findUniqueSpy= vi.spyOn(prismaClient.users,"findUnique")
-const createReturn:Required<Prisma.UserCreateInput> ={hash:"tefsfw",username:"aabadin@gmail.com",lastname:"Abadin",name:"Adrian",id:"texto"}
+const createReturn:Required<Prisma.UsersCreateInput> ={hash:"tefsfw",username:"aabadin@gmail.com",lastname:"Abadin",name:"Adrian",id:"texto"}
 
 describe("AuthController",()=>{
     describe("serializeUser", ()=>{

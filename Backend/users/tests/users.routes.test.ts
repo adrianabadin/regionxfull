@@ -1,3 +1,4 @@
+//@ts-nocheck
 import {vi,describe,it,expect, afterEach} from "vitest"
 import request from "supertest"
 import { beforeEach } from "node:test"

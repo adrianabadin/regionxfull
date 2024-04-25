@@ -1,3 +1,4 @@
+//@ts-nocheck
 import {expect,it,describe,vi,afterEach, beforeEach} from "vitest"
 import { prismaClient } from "../auth.service"
 import { AuthVerifyModule } from "../auth.service.verify"

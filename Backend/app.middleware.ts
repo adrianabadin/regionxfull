@@ -1,7 +1,7 @@
-import express from 'express';
+import * as express from 'express';
 import { AuthController } from './auth/auth.controller';
-import cors from "cors"
-import {z}from "zod"
+import * as cors from "cors"
+import zeta from "zod"
 import morgan from "morgan"
 import cookieParser from "cookie-parser"
 import { PrismaSessionStore } from "@quixo3/prisma-session-store/dist/lib/prisma-session-store";
@@ -11,8 +11,11 @@ import passport from "passport"
 import  authRoutes  from './auth/auth.routes';
 import "./auth/local.strategy"
 import userRouter from './users/user.routes';
+import { error } from 'console';
+import {z} from 'zod';
 const authController=new AuthController()
-const app= express()
+
+const app= express.default()
 const envSchema=z.object({
     DATABASE_URL:z.string().url({message:"Debes proveer un url de la base de datos"}),
 ENVIROMENT:z.enum(["DEV","PRODUCTION"],{invalid_type_error:"ENVIROMENT debe ser DEV o PRODUCTION"}),
@@ -32,7 +35,7 @@ declare global{
 
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(cors({
+app.use(cors.default({
   origin: ['http://localhost:3000'],
   credentials: true,
   preflightContinue: true
