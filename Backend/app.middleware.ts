@@ -1,6 +1,6 @@
-import * as express from 'express';
+import  express from 'express';
 import { AuthController } from './auth/auth.controller';
-import * as cors from "cors"
+import cors from "cors"
 import zeta from "zod"
 import morgan from "morgan"
 import cookieParser from "cookie-parser"
@@ -15,7 +15,7 @@ import { error } from 'console';
 import {z} from 'zod';
 const authController=new AuthController()
 
-const app= express.default()
+const app= express()
 const envSchema=z.object({
     DATABASE_URL:z.string().url({message:"Debes proveer un url de la base de datos"}),
 ENVIROMENT:z.enum(["DEV","PRODUCTION"],{invalid_type_error:"ENVIROMENT debe ser DEV o PRODUCTION"}),
@@ -35,13 +35,15 @@ declare global{
 
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(cors.default({
+app.use(cors())
+app.use(express.static('public'))
+/**
+ * {
   origin: ['http://localhost:3000'],
   credentials: true,
   preflightContinue: true
-}))
-app.use(express.static('public'))
-
+}
+ */
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
