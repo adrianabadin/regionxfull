@@ -39,6 +39,8 @@ export function SignUpModal({
   });
   const [signup] = useSignUpMutation();
   const onSubmit = (data: SignUpType) => {
+    console.log(data);
+    console.log(process.env.NEXT_PUBLIC_BACKURL, "cosas");
     signup({ ...data, password2: undefined as any })
       .unwrap()
       .then(() => setOpen(false))

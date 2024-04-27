@@ -45,7 +45,10 @@ export type LoginType = z.infer<typeof LoginSchema>
  */
 export const apiSlice=createApi({
     reducerPath: "api",
-    baseQuery:fetchBaseQuery({baseUrl:process.env.NEXT_PUBLIC_BACKURL,credentials:"include",mode:"cors",headers:{"Access-Control-Allow-Origin":'http://localhost:3000'}}),
+    baseQuery:fetchBaseQuery({
+        baseUrl:process.env.NEXT_PUBLIC_BACKURL,
+        credentials:"include",
+        mode:"cors"}),
     
     endpoints:(builder)=>({
         login:builder.mutation<AuthResponseType,LoginType>({
@@ -68,7 +71,13 @@ export const apiSlice=createApi({
                 url:'/auth/logout',
                 method:"get"
             })
+        }),
+        jwtLogin:builder.query<AuthResponseType,undefined>({
+            query:()=>({
+                url:'/auth/jwt',
+                method:'get'
+            })
         })
     })
     })
-export const {useLoginMutation,useSignUpMutation,useLogoutQuery}=apiSlice
+export const {useJwtLoginQuery,useLoginMutation,useSignUpMutation,useLogoutQuery}=apiSlice

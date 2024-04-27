@@ -17,11 +17,15 @@ const client_1 = require("@prisma/client");
 const auth_schema_1 = require("./auth.schema");
 const logger_1 = require("../Global.Services/logger");
 const argon2_1 = __importDefault(require("argon2"));
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const prisma_errors_1 = require("../prisma/prisma.errors");
+const auth_errors_1 = require("./auth.errors");
 exports.prismaClient = new client_1.PrismaClient();
 class AuthService {
     constructor() {
         this.prisma = exports.prismaClient;
         this.SignUpUser = this.SignUpUser.bind(this);
+        this.jwtIssuance = this.jwtIssuance.bind(this);
     }
     SignUpUser(data) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -38,10 +42,17 @@ class AuthService {
                 console.log(response);
                 return response;
             }
-            catch (error) {
+            catch (err) {
+                const error = (0, prisma_errors_1.returnPrismaError)(err);
                 logger_1.logger.error({ function: "AuthService.SignUpUser", error });
+                return error;
             }
         });
+    }
+    jwtIssuance(id) {
+        if (id === undefined)
+            return new auth_errors_1.IssuanceMissingId();
+        return jsonwebtoken_1.default.sign({ id, date: new Date() }, "Gran tipo MILEI", { expiresIn: 600 });
     }
 }
 exports.AuthService = AuthService;

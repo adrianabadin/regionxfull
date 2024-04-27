@@ -3,12 +3,15 @@ import { SignUpSchema, SignUpType } from "./auth.schema";
 import { logger } from "../Global.Services/logger";
 import argon2 from "argon2";
 import { z } from "zod";
+import jwt from "jsonwebtoken"
+import { returnPrismaError } from '../prisma/prisma.errors';
+import { IssuanceMissingId } from "./auth.errors";
 export const prismaClient = new PrismaClient()
 export class AuthService{
 protected prisma=prismaClient
     constructor(){
     this.SignUpUser=this.SignUpUser.bind(this)
-    
+    this.jwtIssuance=this.jwtIssuance.bind(this)
 }
 async SignUpUser (data:SignUpType){
     try{
@@ -24,8 +27,14 @@ async SignUpUser (data:SignUpType){
     const response =await this.prisma.users.create({data:dataWithHash})
     console.log(response)
     return response
-    }catch(error){logger.error({function:"AuthService.SignUpUser",error})
-
+    }catch(err){
+        const error = returnPrismaError(err as Error)
+        logger.error({function:"AuthService.SignUpUser",error})
+        return error
 }
 }
+ jwtIssuance(id:string){
+        if (id === undefined) return new IssuanceMissingId()
+        return   jwt.sign({id,date:new Date()},"Gran tipo MILEI",{expiresIn:600})
+ }
 }

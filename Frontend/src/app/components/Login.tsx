@@ -39,8 +39,9 @@ export function LoginModal({
     formState: { errors, isSubmitting },
   } = useForm<LoginType>({
     resolver: zodResolver(LoginSchema),
-    mode: "onBlur",
+    mode: "all",
   });
+  console.log(errors, "tt");
   const onSubmit = (data: LoginType) => {
     login(data)
       .unwrap()
@@ -73,8 +74,12 @@ export function LoginModal({
               </Button>
             </div>
           </DialogHeader>
-          <DialogBody className="w-2/3 mx-auto justify-around min-h-40 flex flex-col">
+          <DialogBody
+            className="w-2/3 mx-auto justify-around min-h-40 flex flex-col"
+            placeholder={undefined}
+          >
             <Input
+              crossOrigin={undefined}
               {...register("username")}
               variant="outlined"
               label="e-Mail"
@@ -85,6 +90,7 @@ export function LoginModal({
               <p className="text-red-500">{errors.username?.message}</p>
             )}
             <Input
+              crossOrigin={undefined}
               {...register("password")}
               variant="outlined"
               label="Contraseña"
@@ -96,12 +102,13 @@ export function LoginModal({
               <p className="text-red-500">{errors.password?.message}</p>
             )}
           </DialogBody>
-          <DialogFooter>
+          <DialogFooter placeholder={undefined}>
             <Button
               variant="gradient"
               type="submit"
               color="blue"
               disabled={isSubmitting}
+              placeholder={undefined}
             >
               {isLoading ? "Ingresando..." : "Ingresar"}
             </Button>

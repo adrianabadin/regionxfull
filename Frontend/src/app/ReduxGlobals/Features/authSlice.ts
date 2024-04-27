@@ -24,6 +24,12 @@ export const authSlice=createSlice({
             state.username=action.payload.username
             state.name=action.payload.name
             state.id=action.payload.id
+        }),
+        builder.addMatcher(apiSlice.endpoints.jwtLogin.matchFulfilled,(state,action:PayloadAction<AuthResponseType>)=>{
+            state.lastname=action.payload.lastname
+            state.username=action.payload.username
+            state.name=action.payload.name
+            state.id=action.payload.id
         })
     }
         

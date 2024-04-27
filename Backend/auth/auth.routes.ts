@@ -5,18 +5,37 @@ import { LoginSchema, SignUpSchema, validateSchemaMiddleware } from "./auth.sche
 import Session from 'express-session';
 export const authRoutes=Router()
 const authController= new AuthController();
-authRoutes.post("/signup",(req:Request,res:Response,next:NextFunction)=>{
-    console.log(req.body,"texto",req.headers,req);
-    next()},validateSchemaMiddleware(SignUpSchema),passport.authenticate("register",{failureRedirect:"/login"}),(req:Request,res:Response)=>{console.log(req.user);res.status(200).send(req.user)})
-authRoutes.post("/login",validateSchemaMiddleware(LoginSchema),passport.authenticate("login",{failureRedirect:"/login"}),(req:Request,res:Response)=>{
+
+authRoutes.post(
+    "/signup",
+    authController.spyMiddleware,
+    validateSchemaMiddleware(SignUpSchema),
+    passport.authenticate("register",{session:false,failureRedirect:"/login"}),
+    authController.jwtCurrentUser,
+    (req:Request,res:Response)=>{console.log(req.user);res.status(200).send(req.user)})
+authRoutes.post(
+    "/login",
+    authController.spyMiddleware,
+    validateSchemaMiddleware(LoginSchema),
+    passport.authenticate("login",{session:false,failureRedirect:"/login"}),
+    authController.jwtCurrentUser,
+    (req:Request,res:Response)=>{
     console.log(req.user, "hizo login");
-   // req.session.save()
-    // req.headers["access-control-allow-credentials"]="true"
     res.status(200).send(req.user)})
 authRoutes.get("/logout",(req:Request,res:Response,next:NextFunction)=>{
     req.logout((error)=>{if (error) next(error)
         res.status(200).send("Loged out")})
     })
-    
+ authRoutes.get(
+    '/jwt',
+    (req:Request,res:Response,next:NextFunction)=>{console.log(req.cookies);next()},
+    passport.authenticate('jwt',{session:false}),
+   authController.jwtCurrentUser,
+(req:Request,res:Response)=>{
+    console.log(req.user)
+    res.status(200).send(req.user)
+}
+)
+
 export default authRoutes
 //(req:Request,res:Response,next:NextFunction)=>{res.status(200).send(req.body)},

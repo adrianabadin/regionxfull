@@ -14,12 +14,14 @@ import SignUpModal from "./Signup";
 import { useAppSelector } from "../ReduxGlobals/store";
 import {
   apiSlice,
+  useJwtLoginQuery,
   useLoginMutation,
   useLogoutQuery,
 } from "../ReduxGlobals/Features/apiSlice";
 import { useDispatch } from "react-redux";
 import { clearAuth } from "../ReduxGlobals/Features/authSlice";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -48,6 +50,7 @@ export function StickyNavbar() {
         variant="small"
         color="white"
         className="p-1 font-normal"
+        placeholder={undefined}
       >
         <Link href="/direccion" className="flex items-center">
           Equipo Directivo
@@ -58,6 +61,7 @@ export function StickyNavbar() {
         variant="small"
         color="white"
         className="p-1 font-normal"
+        placeholder={undefined}
       >
         <a href="#" className="flex items-center">
           Account
@@ -68,6 +72,7 @@ export function StickyNavbar() {
         variant="small"
         color="white"
         className="p-1 font-normal"
+        placeholder={undefined}
       >
         <a href="#" className="flex items-center">
           Blocks
@@ -78,6 +83,7 @@ export function StickyNavbar() {
         variant="small"
         color="white"
         className="p-1 font-normal"
+        placeholder={undefined}
       >
         <a href="#" className="flex items-center">
           Docs
@@ -85,10 +91,16 @@ export function StickyNavbar() {
       </Typography>
     </ul>
   );
+  const { data, isError } = useJwtLoginQuery(undefined, {
+    pollingInterval: 500000,
+  });
 
   return (
     <header className="bg-blue-500 max-h-[768px] fixed top-0  h-32 w-full overflow-hidden  ">
-      <Navbar className="z-10  max-w-full h-full rounded-none px-4  lg:px-8 lg:py-4 bg-blue-500 my-auto">
+      <Navbar
+        className="z-10  max-w-full h-full rounded-none px-4  lg:px-8 lg:py-4 bg-blue-500 my-auto"
+        placeholder={undefined}
+      >
         <div className="flex items-center justify-between text-blue-gray-900 h-full">
           <Typography
             variant="h2"
@@ -96,6 +108,7 @@ export function StickyNavbar() {
             color="white"
             href="/"
             className="mr-4 font-sans cursor-pointer py-1.5 font-medium"
+            placeholder={undefined}
           >
             Region Sanitaria X
           </Typography>
@@ -109,6 +122,7 @@ export function StickyNavbar() {
                     size="sm"
                     className="hidden text-gray-100 lg:inline-block"
                     onClick={() => setOpen(true)}
+                    placeholder={undefined}
                   >
                     <span>Log In</span>
                   </Button>
@@ -117,6 +131,7 @@ export function StickyNavbar() {
                     size="sm"
                     className="hidden lg:inline-block text-gray-100"
                     onClick={() => setSignUp(true)}
+                    placeholder={undefined}
                   >
                     <span>Sign in</span>
                   </Button>
@@ -128,6 +143,7 @@ export function StickyNavbar() {
                   href="#"
                   color="white"
                   className="font-bold mr-3"
+                  placeholder={undefined}
                 >
                   Ingresando...
                 </Typography>
@@ -139,6 +155,7 @@ export function StickyNavbar() {
                     href="#"
                     color="white"
                     className="font-bold mr-3"
+                    placeholder={undefined}
                   >
                     {`Bienvenido ${username}`}
                   </Typography>
@@ -148,6 +165,7 @@ export function StickyNavbar() {
                     color="gray"
                     onClick={handleLogout}
                     className="hover:font-bold"
+                    placeholder={undefined}
                   >
                     Cerrar Sesion
                   </Typography>
@@ -159,6 +177,7 @@ export function StickyNavbar() {
               className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
               ripple={false}
               onClick={() => setOpenNav(!openNav)}
+              placeholder={undefined}
             >
               {openNav ? (
                 <svg
@@ -202,6 +221,7 @@ export function StickyNavbar() {
               size="sm"
               className=""
               onClick={() => setOpen((prev) => !prev)}
+              placeholder={undefined}
             >
               <span>Log In</span>
             </Button>
@@ -211,6 +231,7 @@ export function StickyNavbar() {
               size="sm"
               className=""
               onClick={() => setSignUp((prev) => !prev)}
+              placeholder={undefined}
             >
               <span>Sign in</span>
             </Button>
