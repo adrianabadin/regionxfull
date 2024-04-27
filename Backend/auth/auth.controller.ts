@@ -36,7 +36,7 @@ export class AuthController{
         
           const response = this.service.jwtIssuance(req.user.id)
           if (response instanceof IssuanceMissingId) return res.status(401).send(new UnAuthorized())
-          res.cookie("jwt",response)
+          res.cookie("jwt",response,{httpOnly:false,sameSite:"lax",secure:false})
           next()
          
 
