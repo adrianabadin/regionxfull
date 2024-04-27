@@ -15,6 +15,7 @@ import cookieParser from 'cookie-parser';
 const authController=new AuthController()
 
 const app= express()
+app.use(cookieParser())
 app.use(cors({
   origin: ['http://localhost:3000','http://66.97.47.206:3000','http://66.97.47.206'],
   credentials: true,
@@ -59,7 +60,7 @@ app.use(express.urlencoded({ extended: true }))
 //   secret: 'Dilated flakes of fire fall, like snow in the Alps when there is no wind'
 
 // })
-app.use(cookieParser()) // "Whether 'tis nobler in the mind to suffer"
+ // "Whether 'tis nobler in the mind to suffer"
 // app.use(sessionMiddleware)
 
 app.use(passport.initialize())
